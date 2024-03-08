@@ -25,7 +25,7 @@ const theme = createTheme({
 	},
 	typography: {
 		fontFamily: [
-			"Cera Pro",
+			"DM Sans",
 			"-apple-system",
 			"BlinkMacSystemFont",
 			'"Segoe UI"',

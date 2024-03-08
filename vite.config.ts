@@ -13,6 +13,7 @@ export default defineConfig({
 			"@merchpage": resolve(__dirname, "./src/components/MerchPage/"),
 			"@utils": resolve(__dirname, "./src/utils/"),
 			"@pages": resolve(__dirname, "./src/pages/"),
+			"@assets": resolve(__dirname, "./src/assets/"),
 			"@api": resolve(__dirname, "./src/api/"),
 			"@components": resolve(__dirname, "./src/components/"),
 			"@": resolve(__dirname, "./src"),
