@@ -22,3 +22,6 @@ build-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Mine
+.firebase
