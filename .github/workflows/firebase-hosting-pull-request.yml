@@ -12,8 +12,7 @@ jobs:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        
+      - uses: actions/checkout@v3    
       - name: Setup pnpm
       uses: pnpm/action-setup@v3
       with:
