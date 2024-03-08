@@ -1,42 +1,43 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('@/assets/fonts/font.css');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
+
+body
+{
+	scrollbar-gutter: stable;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+::-webkit-scrollbar
+{
+	background: transparent;
+	width: 8px;
+	border-radius: 100vh;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+:is(:not(body))::-webkit-scrollbar-thumb
+{
+	background: var(--accent-primary);
+	border-radius: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+:is(:not(body))::-webkit-scrollbar-thumb:hover
+{
+	background: color-mix(in lab, var(--accent-primary), transparent 50%);
+	border-radius: 100vh;
 }
 
-.card {
-  padding: 2em;
+body::-webkit-scrollbar-thumb
+{
+	background: var(--accent-primary);
+	border-radius: 100vh;
 }
 
-.read-the-docs {
-  color: #888;
+body::-webkit-scrollbar-thumb:hover
+{
+	background: color-mix(in lab, var(--accent-primary), transparent 50%);
+	border-radius: 100vh;
+}
+
+::selection
+{
+	background-color: color-mix(in lab, var(--accent-primary), transparent 60%);
 }
