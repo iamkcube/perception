@@ -15,7 +15,7 @@ jobs:
         uses: pnpm/action-setup@v3
         with:
             version: 8
-      - run: pnpm ci && npm run build
+      - run: pnpm ci --frozen-lockfile && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
