@@ -17,13 +17,15 @@
 	--deep-blue: #6C2EF2;
 	--accent-white: #d1d1d1;
 	--monospace-font: "DM Mono";
+	--navbar-height: 6rem;
 }
 
 body
 {
 	margin: 0;
 	background-color: var(--body-color);
-	font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+	filter: url(#noiseFilter) brightness(100%) contrast(125%);
+	font-family: "Mark Pro", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
 		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
