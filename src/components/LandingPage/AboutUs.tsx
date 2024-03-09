@@ -10,8 +10,8 @@ export default function AboutUs() {
 			}}
 		>
 			<div style={{backgroundColor:'black', flex:'1'}}>
-              <h6>[01]</h6>
-			  <h1 style={{fontSize:'2rem', textAlign:'left'}}>About us</h1>
+              <h6 style={{paddingLeft:'2rem'}}>[01]</h6>
+			  <h1 style={{fontSize:'2rem', textAlign:'left', paddingLeft:'2rem'}}>About us</h1>
 
 			</div>
 			<div style={{flex:'1',backgroundColor:'black'}}>
