@@ -4,7 +4,7 @@ export default function AboutUs() {
 	return (
 		<div
 			style={{
-				display: "flex", justifyContent:"space-between", margin:'4rem'
+				display: "flex", justifyContent:"space-between", marginInline: "clamp(2rem, 4vw + 1rem , 4rem)"
 				
 				
 			}}
