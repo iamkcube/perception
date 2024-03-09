@@ -2,7 +2,13 @@
 
 export default function MeetOurTeam() {
   return (
-    <div>
+    <div
+    style={{
+      display: "flex", justifyContent:"space-between", margin:'4rem'
+      
+      
+    }}
+  >
       
     </div>
   )
