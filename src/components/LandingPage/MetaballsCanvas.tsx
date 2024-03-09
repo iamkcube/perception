@@ -304,9 +304,11 @@ const createRadialGradient = (
 export default function MetaballsCanvas({
 	color1,
 	color2,
+	noOfBalls,
 }: {
 	color1: string;
 	color2: string;
+	noOfBalls: number;
 }) {
 	const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -320,7 +322,7 @@ export default function MetaballsCanvas({
 		const width = (canvas.width = window.innerWidth);
 		const height = (canvas.height = window.innerHeight);
 
-		const metaballs = new Metaballs(width, height, 5, color1, color2, ctx);
+		const metaballs = new Metaballs(width, height, noOfBalls, color1, color2, ctx);
 
 		const animate = () => {
 			ctx.clearRect(0, 0, width, height);
