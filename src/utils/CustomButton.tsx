@@ -25,7 +25,7 @@ export default function CustomButton({
 	loading,
 	borderWidth = 2,
 	color = "primary",
-	contained = false,
+	contained = true,
 	sx,
 	onClick,
 }: RoundedButtonProps) {

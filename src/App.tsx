@@ -16,7 +16,7 @@ const theme = createTheme({
 		mode: "dark",
 		primary: {
 			main: "#6B71F2",
-			contrastText: "#ffffff",
+			contrastText: "#d1d1d1",
 		},
 		secondary: {
 			main: "#0FF2B2",
@@ -25,7 +25,7 @@ const theme = createTheme({
 	},
 	typography: {
 		fontFamily: [
-			"DM Sans",
+			"Mark Pro",
 			"-apple-system",
 			"BlinkMacSystemFont",
 			'"Segoe UI"',

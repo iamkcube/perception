@@ -5,25 +5,29 @@ export default function Background() {
 	return (
 		<Box
 			sx={{
-				position: "fixed",
+				position: "absolute",
 				zIndex: -30,
 				top: "0",
 				left: "0",
 				overflow: "hidden",
 				height: "100vh",
-				width: "100vw",
+				width: "100%",
 				margin: "auto",
-				filter: "blur(124px) url(#noiseFilter) brightness(100%) contrast(125%)",
+				filter: "blur(80px) url(#noiseFilter) brightness(100%) contrast(125%)",
 			}}
 		>
-			<MetaballsCanvas color2="#6B71F2" color1="#0FF2B2" />
+			<MetaballsCanvas
+				color1="#6B71F2"
+				color2="#6C2EF2"
+				noOfBalls={7}
+			/>
 			<svg display="none">
 				<filter id="noiseFilter">
 					<feTurbulence
 						type="fractalNoise"
-						baseFrequency="0.6"
+						baseFrequency="1"
 						seed="2"
-						numOctaves="6"
+						numOctaves="2"
 						stitchTiles="stitch"
 					/>
 					<feColorMatrix
@@ -39,7 +43,7 @@ export default function Background() {
 					<feBlend
 						in="SourceGraphic"
 						in2="monoNoise"
-						mode="screen"
+						mode="normal"
 					/>
 				</filter>
 			</svg>
