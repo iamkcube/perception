@@ -29,7 +29,7 @@ export default function NavbarLinks({
 		white-space: nowrap;
 		${forDrawer && forDrawerLinkStyles}
 		&:hover {
-			color: var(--accent-secondary);
+			color: color-mix(in lab, var(--accent-primary), white 30%);
 		}
 		&:before {
 			content: "";
@@ -38,7 +38,7 @@ export default function NavbarLinks({
 			bottom: 0;
 			width: 100%;
 			height: 2px;
-			background-color: var(--accent-secondary);
+			background-color: var(--accent-primary);
 			scale: 0% 50%;
 			transform-origin: right;
 			transition: scale 0.3s ease-in-out;
@@ -57,6 +57,7 @@ export default function NavbarLinks({
 				flexDirection: forDrawer ? "column" : "row",
 				listStyle: "none",
 				width: forDrawer ? 250 : "auto",
+				margin:"auto",
 				padding: forDrawer ? "0.5rem" : "auto",
 				...(forDrawer && {
 					marginBlockStart: "4rem",

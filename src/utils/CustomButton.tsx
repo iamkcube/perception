@@ -14,7 +14,7 @@ type RoundedButtonProps = {
 		| "info"
 		| "warning"
 		| undefined;
-	contained?: boolean;
+	variant?: "contained" | "text" | "outlined";
 	sx?: React.CSSProperties;
 	onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
 };
@@ -25,7 +25,7 @@ export default function CustomButton({
 	loading,
 	borderWidth = 2,
 	color = "primary",
-	contained = true,
+	variant = "contained",
 	sx,
 	onClick,
 }: RoundedButtonProps) {
@@ -35,7 +35,7 @@ export default function CustomButton({
 			disableElevation
 			loading={loading}
 			color={color}
-			variant={contained ? "contained" : "outlined"}
+			variant={variant}
 			onClick={onClick}
 			sx={{
 				borderRadius: 0,

@@ -19,7 +19,9 @@ export default function Navbar() {
 			style={{
 				position: "sticky",
 				top: 0,
-				display: "flex",
+				display: "grid",
+				gridTemplateColumns: "repeat(3, auto)",
+				gridTemplateAreas: `"left center right"`,
 				justifyContent: "space-between",
 				alignItems: "center",
 				minHeight: "var(--navbar-height)",
@@ -54,8 +56,9 @@ export default function Navbar() {
 				onClick={() => {
 					navigate(userLoggedIn ? "./events" : "./login");
 				}}
+				variant={isBigDevice ? "outlined" : "text"}
 			>
-				{userLoggedIn ? "Register" : "Log In/Sign Up"}
+				{userLoggedIn ? "Register" : "Log In"}
 			</CustomButton>
 
 			{userLoggedIn && (

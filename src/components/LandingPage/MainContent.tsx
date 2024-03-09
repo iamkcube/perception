@@ -44,7 +44,7 @@ export default function MainContent() {
 					<Typography
 						variant="h1"
 						align="center"
-						fontSize="clamp(1rem, 3vw + 0.5rem, 2.5rem)"
+						fontSize="clamp(0.95rem, 3vw + 0.25rem, 2.5rem)"
 						fontFamily="var(--monospace-font)"
 						color="var(--accent-white)"
 					>
@@ -52,7 +52,7 @@ export default function MainContent() {
 					</Typography>
 					<CustomButton
 						onClick={() => {}}
-						contained={false}
+						variant="outlined"
 						color="secondary"
 						sx={{
 							justifySelf: "center",

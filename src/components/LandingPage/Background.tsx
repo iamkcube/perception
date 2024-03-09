@@ -13,13 +13,13 @@ export default function Background() {
 				height: "100vh",
 				width: "100%",
 				margin: "auto",
-				filter: "blur(80px) url(#noiseFilter) brightness(100%) contrast(125%)",
+				filter: "blur( clamp( 24px, 7vw + 1px , 80px )) brightness(100%) contrast(125%)",
 			}}
 		>
 			<MetaballsCanvas
 				color1="#6B71F2"
 				color2="#6C2EF2"
-				noOfBalls={7}
+				noOfBalls={5}
 			/>
 			<svg display="none">
 				<filter id="noiseFilter">
