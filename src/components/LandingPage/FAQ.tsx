@@ -1,107 +1,86 @@
-import AddIcon from '@mui/icons-material/Add';
-import { Accordion, AccordionActions, AccordionDetails, AccordionSummary, Button } from "@mui/material";
+import { useOtherContext } from "@/contexts/OtherContext";
+import AddIcon from "@mui/icons-material/Add";
+import {
+	Accordion,
+	AccordionDetails,
+	AccordionSummary,
+	Box,
+	Stack,
+	Typography,
+} from "@mui/material";
 import CustomButton from "@utils/CustomButton";
+
 export default function FAQ() {
-  return (
-	<div style={{display:'flex',justifyContent:'space-between',marginInline: "clamp(2rem, 4vw + 1rem , 4rem)"}}>
+	const { isBigDevice } = useOtherContext();
 
-    <div style={{flex:'1',backgroundColor:'black'}}>
-      <h6 style={{position:'relative',left:'2rem'}}>[02]</h6>
-     <h1 style={{fontSize:'2rem',textAlign:'left',position:'relative',left:'2rem'}}>Our Services</h1>
-    </div>
-
-
-    <div style={{flex:'1',backgroundColor:'black'}}>
-      <br></br>
-      <ul>
-        <li style={{position:'relative',listStyleType:'none',right:'4rem',color:'white',fontSize:'1.5rem'}}>List of our services</li>
-      </ul>
-      <br></br>
-      <br></br>
-    <Accordion style={{backgroundColor:'black',position:'relative',right:'2rem'}}>
-        <AccordionSummary
-          expandIcon={<AddIcon/>}
-          aria-controls="panel1-content"
-          id="panel1-header"
-        >
-          Accordion 1
-        </AccordionSummary>
-        <AccordionDetails>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
-        </AccordionDetails>
-      </Accordion>
-      <Accordion style={{backgroundColor:'black',position:'relative',right:'2rem'}}>
-        <AccordionSummary
-         expandIcon={<AddIcon/>}
-          aria-controls="panel2-content"
-          id="panel2-header"
-        >
-          Accordion 2
-        </AccordionSummary>
-        <AccordionDetails>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
-        </AccordionDetails>
-      </Accordion>
-      <Accordion style={{backgroundColor:'black',position:'relative',right:'2rem'}}>
-        <AccordionSummary
-         expandIcon={<AddIcon/>}
-          aria-controls="panel2-content"
-          id="panel2-header"
-        >
-          Accordion 3
-        </AccordionSummary>
-        <AccordionDetails>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
-        </AccordionDetails>
-      </Accordion>
-      <Accordion style={{backgroundColor:'black',position:'relative',right:'2rem'}}>
-        <AccordionSummary
-         expandIcon={<AddIcon/>}
-          aria-controls="panel2-content"
-          id="panel2-header"
-        >
-          Accordion 4
-        </AccordionSummary>
-        <AccordionDetails>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
-        </AccordionDetails>
-      </Accordion>
-      <Accordion style={{backgroundColor:'black',position:'relative',right:'2rem'}}>
-        <AccordionSummary
-         expandIcon={<AddIcon/>}
-          aria-controls="panel2-content"
-          id="panel2-header"
-        >
-          Accordion 5
-        </AccordionSummary>
-        <AccordionDetails>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
-        </AccordionDetails>
-      </Accordion>
-      <Accordion defaultExpanded style={{backgroundColor:'black',position:'relative',right:'2rem'}}>
-        <AccordionSummary
-         expandIcon={<AddIcon/>}
-          aria-controls="panel3-content"
-          id="panel3-header"
-        >
-          Accordion Actions
-        </AccordionSummary>
-        <AccordionDetails>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
-        </AccordionDetails>
-        <AccordionActions>
-          <Button>Cancel</Button>
-          <Button>Agree</Button>
-        </AccordionActions>
-      </Accordion>
-      <CustomButton onClick={()=>{}}>See More</CustomButton>
-    </div>
-  </div>
-  )
+	return (
+		<Box
+			style={{
+				display: "grid",
+				gridTemplateColumns: isBigDevice ? "1fr 1fr" : "auto",
+				gridTemplateRows: "auto 1fr",
+				paddingInline: "clamp(2rem, 4vw + 1rem , 4rem)",
+				paddingBlock: "3rem",
+				rowGap: isBigDevice ? "3rem" : "1rem",
+			}}
+		>
+			<Typography
+				sx={{
+					fontFamily: "var(--monospace-font)",
+					fontWeight: "500",
+				}}
+			>
+				[02]
+			</Typography>
+			<Typography
+				sx={{
+					fontFamily: "var(--monospace-font)",
+					fontWeight: "500",
+				}}
+			>
+				&#10010; [Have any questions?]
+			</Typography>
+			<h1
+				id="FAQ"
+				style={{
+					fontSize: "4rem",
+				}}
+			>
+				FAQ
+			</h1>
+			<Stack spacing="2rem">
+				<Stack>
+					{[...Array(9)].map((_, index) => (
+						<Accordion
+							sx={{
+								backgroundColor: "var(--body-color)",
+							}}
+						>
+							<AccordionSummary
+								expandIcon={<AddIcon />}
+								aria-controls={`panel${index}-content`}
+								id={`panel${index}-header`}
+							>
+								Accordion {index}
+							</AccordionSummary>
+							<AccordionDetails>
+								Lorem ipsum dolor sit amet, consectetur
+								adipiscing elit. Suspendisse malesuada lacus ex,
+								sit amet blandit leo lobortis eget.
+							</AccordionDetails>
+						</Accordion>
+					))}
+				</Stack>
+				<CustomButton
+					color="inherit"
+					sx={{
+						alignSelf: "flex-start",
+					}}
+					onClick={() => {}}
+				>
+					See More
+				</CustomButton>
+			</Stack>
+		</Box>
+	);
 }

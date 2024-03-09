@@ -1,31 +1,84 @@
+import { useOtherContext } from "@/contexts/OtherContext";
+import { Box, Stack, Typography } from "@mui/material";
 import CustomButton from "@utils/CustomButton";
 
 export default function AboutUs() {
+	const { isBigDevice } = useOtherContext();
+
 	return (
-		<div
+		<Box
 			style={{
-				display: "flex", justifyContent:"space-between", marginInline: "clamp(2rem, 4vw + 1rem , 4rem)"
-				
-				
+				display: "grid",
+				gridTemplateColumns: isBigDevice ? "1fr 1fr" : "auto",
+				gridTemplateRows: "auto 1fr",
+				backgroundColor: "var(--accent-white)",
+				color: "var(--text-color-dark)",
+				paddingInline: "clamp(2rem, 4vw + 1rem , 4rem)",
+				paddingBlock: "3rem",
+				rowGap: isBigDevice ? "3rem" : "1rem",
 			}}
 		>
-			<div style={{backgroundColor:'black', flex:'1'}}>
-              <h6 style={{paddingLeft:'2rem'}}>[01]</h6>
-			  <h1 style={{fontSize:'2rem', textAlign:'left', paddingLeft:'2rem'}}>About us</h1>
-
-			</div>
-			<div style={{flex:'1',backgroundColor:'black'}}>
-				<ul>
-					<li>
-						[who we are]</li>
-				</ul>
-				<img src="https://fastly.picsum.photos/id/516/1080/720.jpg?hmac=_lNpyxgHTiAMdJncpoWeYSaN69YiW6exL7gwTTUHwYI" style={{paddingRight:'2rem'}} alt="" />
-				<h2>Natech</h2>
-				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores, facere? Excepturi temporibus dicta vero dolores maiores similique facilis quasi, modi veritatis! Voluptate sed, sequi cupiditate nulla odit cumque soluta quos ipsum rerum nobis quae temporibus officiis?</p>
-            <CustomButton onClick={() => {}}>Read More</CustomButton>
-			</div>
-			
-			
-		</div>
+			<Typography
+				sx={{
+					fontFamily: "var(--monospace-font)",
+					fontWeight: "500",
+				}}
+			>
+				[01]
+			</Typography>
+			<Typography
+				sx={{
+					fontFamily: "var(--monospace-font)",
+					fontWeight: "500",
+				}}
+			>
+				&#10010; [Who we are]
+			</Typography>
+			<h1
+				id="AboutUs"
+				style={{
+					fontSize: "3rem",
+				}}
+			>
+				About us
+			</h1>
+			<Stack spacing="1rem">
+				<img
+					src="https://source.unsplash.com/1080x720/?techfest"
+					width={1080}
+					height={720}
+					style={{
+						width: "100%",
+						height: "100%",
+						aspectRatio: "4/3",
+						objectFit: "cover",
+					}}
+					alt="techfest"
+				/>
+				<h2>Perception</h2>
+				<Typography
+					sx={{
+						fontFamily: "var(--monospace-font)",
+					}}
+				>
+					Perception is the Annual Tech Fest of Odisha University of
+					Technology and Research, Bhubaneswar. This is a three day
+					long festival for technocrats with a bunch of technical and
+					fun filled events. This premier inter college event of our
+					esteemed University allows students from different corners
+					of the state to challenge, compete and show their technical
+					abundance.
+				</Typography>
+				<CustomButton
+					color="inherit"
+					sx={{
+						alignSelf: "flex-start",
+					}}
+					onClick={() => {}}
+				>
+					Read More
+				</CustomButton>
+			</Stack>
+		</Box>
 	);
 }

@@ -57,7 +57,7 @@ export default function NavbarLinks({
 				flexDirection: forDrawer ? "column" : "row",
 				listStyle: "none",
 				width: forDrawer ? 250 : "auto",
-				margin:"auto",
+				margin: "auto",
 				padding: forDrawer ? "0.5rem" : "auto",
 				...(forDrawer && {
 					marginBlockStart: "4rem",
@@ -70,9 +70,7 @@ export default function NavbarLinks({
 				<Link
 					to="#Home"
 					css={linkStyle}
-					onClick={() =>
-						document.getElementById("Home")?.scrollIntoView()
-					}
+					onClick={() => window.scrollTo(0, 0)}
 				>
 					Home
 				</Link>
@@ -86,17 +84,6 @@ export default function NavbarLinks({
 					}
 				>
 					About
-				</Link>
-			</ListItem>
-			<ListItem>
-				<Link
-					to="#HowToReach"
-					css={linkStyle}
-					onClick={() =>
-						document.getElementById("HowToReach")?.scrollIntoView()
-					}
-				>
-					How To Reach
 				</Link>
 			</ListItem>
 			<ListItem>
@@ -116,6 +103,17 @@ export default function NavbarLinks({
 					}
 				>
 					FAQ
+				</Link>
+			</ListItem>
+			<ListItem>
+				<Link
+					to="#HowToReach"
+					css={linkStyle}
+					onClick={() =>
+						document.getElementById("HowToReach")?.scrollIntoView()
+					}
+				>
+					How To Reach
 				</Link>
 			</ListItem>
 			<ListItem>

@@ -33,8 +33,10 @@ export default function MainContent() {
 						letterSpacing={isBigDevice ? "0.3ch" : "0.05ch"}
 						textTransform="uppercase"
 						fontWeight="bold"
-						fontSize="clamp(3rem, 10vw + 0.25rem, 8rem)"
+						// fontSize="clamp(3rem, 10vw + 0.25rem, 8rem)"
+						fontSize="clamp(5rem, 13vw + 1rem, 12rem)"
 						color="white"
+						fontFamily="Bebas Neue"
 						sx={{
 							pointerEvents: "none",
 						}}
@@ -44,7 +46,7 @@ export default function MainContent() {
 					<Typography
 						variant="h1"
 						align="center"
-						fontSize="clamp(0.95rem, 3vw + 0.25rem, 2.5rem)"
+						fontSize="clamp(0.95rem, 3vw + 0.25rem, 2rem)"
 						fontFamily="var(--monospace-font)"
 						color="var(--accent-white)"
 					>
@@ -62,16 +64,15 @@ export default function MainContent() {
 						Register Now
 					</CustomButton>
 				</Box>
-				<Box
+				{/* <Box
 					sx={{
 						writingMode: "vertical-lr",
-						display: "none",
 						justifyContent: "space-evenly",
 					}}
 				>
 					<Typography>hello</Typography>
 					<Typography>hello</Typography>
-				</Box>
+				</Box> */}
 			</Box>
 		</>
 	);

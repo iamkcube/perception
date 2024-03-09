@@ -43,7 +43,7 @@ export default function Navbar() {
 				<img
 					src="/logo.png"
 					alt="Logo"
-					width={isBigDevice ? "48px" : "40px"}
+					width={40}
 				/>
 			</IconButton>
 			<NavDrawer
