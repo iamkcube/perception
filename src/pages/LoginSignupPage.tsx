@@ -17,6 +17,7 @@ import { useMutation } from "@tanstack/react-query";
 import CustomButton from "@utils/CustomButton";
 import { useContext, useEffect, useRef } from "react";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import Spline from "@splinetool/react-spline";
 
 export default function LoginSignupPage() {
 	const { isBigDevice } = useOtherContext();
@@ -142,8 +143,22 @@ export default function LoginSignupPage() {
 				minHeight: "100svh",
 				position: "relative",
 				overflow: "hidden",
+				"&::before": {
+					content: '""',
+					position: "absolute",
+					inset: 0,
+					backgroundImage:
+						"linear-gradient(to top, color-mix(in lab, var(--accent-primary) 30%, transparent), transparent 30%)",
+				},
 			}}
 		>
+			<Spline
+				scene="https://prod.spline.design/hHFaVj0jlUF058eO/scene.splinecode"
+				style={{
+					position: "absolute",
+					opacity: 0.25,
+				}}
+			/>
 			<Stack
 				justifyContent="space-between"
 				alignItems="center"
