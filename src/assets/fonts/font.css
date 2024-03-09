@@ -1,95 +1,71 @@
-@font-face {
-    font-family: 'Cera Pro';
-    src: url('cera_pro_black-webfont.woff2') format('woff2'),
-         url('cera_pro_black-webfont.woff') format('woff');
-    font-weight: 900;
+@font-face
+{
+    font-family: 'Mark Pro';
+    src: url('markproextralight-webfont.woff2') format('woff2'),
+        url('markproextralight-webfont.woff') format('woff');
+    font-weight: 200;
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'Cera Pro';
-    src: url('cera_pro_blackitalic-webfont.woff2') format('woff2'),
-         url('cera_pro_blackitalic-webfont.woff') format('woff');
-    font-weight: 900;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Cera Pro';
-    src: url('cera_pro_bold-webfont.woff2') format('woff2'),
-         url('cera_pro_bold-webfont.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Cera Pro';
-    src: url('cera_pro_bolditalic-webfont.woff2') format('woff2'),
-         url('cera_pro_bolditalic-webfont.woff') format('woff');
-    font-weight: bold;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Cera Pro';
-    src: url('cera_pro_light-webfont.woff2') format('woff2'),
-         url('cera_pro_light-webfont.woff') format('woff');
+@font-face
+{
+    font-family: 'Mark Pro';
+    src: url('markprolight-webfont.woff2') format('woff2'),
+        url('markprolight-webfont.woff') format('woff');
     font-weight: 300;
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'Cera Pro';
-    src: url('cera_pro_lightitalic-webfont.woff2') format('woff2'),
-         url('cera_pro_lightitalic-webfont.woff') format('woff');
-    font-weight: 300;
-    font-style: italic;
+@font-face
+{
+    font-family: 'Mark Pro';
+    src: url('markprobook-webfont.woff2') format('woff2'),
+        url('markprobook-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: oblique;
 }
 
-@font-face {
-    font-family: 'Cera Pro';
-    src: url('cera_pro_medium-webfont.woff2') format('woff2'),
-         url('cera_pro_medium-webfont.woff') format('woff');
+@font-face
+{
+    font-family: 'Mark Pro';
+    src: url('markpromedium-webfont.woff2') format('woff2'),
+        url('markpromedium-webfont.woff') format('woff');
     font-weight: 500;
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'Cera Pro';
-    src: url('cera_pro_mediumitalic-webfont.woff2') format('woff2'),
-         url('cera_pro_mediumitalic-webfont.woff') format('woff');
-    font-weight: 500;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Cera Pro';
-    src: url('cera_pro_regular-webfont.woff2') format('woff2'),
-         url('cera_pro_regular-webfont.woff') format('woff');
-    font-weight: normal;
+@font-face
+{
+    font-family: 'Mark Pro';
+    src: url('markprobold-webfont.woff2') format('woff2'),
+        url('markprobold-webfont.woff') format('woff');
+    font-weight: 700;
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'Cera Pro';
-    src: url('cera_pro_regularitalic-webfont.woff2') format('woff2'),
-         url('cera_pro_regularitalic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Cera Pro';
-    src: url('cera_pro_thin-webfont.woff2') format('woff2'),
-         url('cera_pro_thin-webfont.woff') format('woff');
-    font-weight: 100;
+@font-face
+{
+    font-family: 'Mark Pro';
+    src: url('markproheavy-webfont.woff2') format('woff2'),
+        url('markproheavy-webfont.woff') format('woff');
+    font-weight: 800;
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'Cera Pro';
-    src: url('cera_pro_thinitalic-webfont.woff2') format('woff2'),
-         url('cera_pro_thinitalic-webfont.woff') format('woff');
-    font-weight: 100;
-    font-style: italic;
+@font-face
+{
+    font-family: 'Mark Pro';
+    src: url('markproblack-webfont.woff2') format('woff2'),
+        url('markproblack-webfont.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: 'Mark Pro';
+    src: url('markpro-webfont.woff2') format('woff2'),
+        url('markpro-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
 }

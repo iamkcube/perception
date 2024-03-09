@@ -41,3 +41,19 @@ body::-webkit-scrollbar-thumb:hover
 {
 	background-color: color-mix(in lab, var(--accent-primary), transparent 60%);
 }
+
+
+@keyframes heading-animation
+{
+	from
+	{
+		filter: drop-shadow(0 0 40px var(--accent-primary)) drop-shadow(0 0 100px var(--deep-blue));
+		/* scale: 1.2; */
+	}
+	
+	to
+	{
+		filter: drop-shadow(0 0 15px var(--accent-primary)) drop-shadow(0 0 30px var(--deep-blue));
+		/* scale: 1; */
+	}
+}

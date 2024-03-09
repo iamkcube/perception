@@ -1,6 +1,7 @@
+import EventCard from "@eventspage/EventCard";
 
 export default function EventsPage() {
   return (
-	<div>EventsPage</div>
+	 <EventCard />
   )
 }
