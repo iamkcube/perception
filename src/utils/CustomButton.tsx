@@ -43,6 +43,7 @@ export default function CustomButton({
 				paddingBlock: "0.6rem",
 				color: "var(--text-color)",
 				textTransform: "none",
+				lineHeight: "2.5ex",
 				"&.MuiLoadingButton-root": {
 					borderWidth: borderWidth,
 				},

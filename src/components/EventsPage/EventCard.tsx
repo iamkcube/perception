@@ -1,69 +1,141 @@
+import {
+	Box,
+	Card,
+	CardMedia,
+	Divider,
+	Stack,
+	Typography,
+	styled,
+} from "@mui/material";
 import CustomButton from "@utils/CustomButton";
 
 export default function EventCard() {
 	return (
-		<div
-		style={{
-			backgroundColor:'white'
-		}}>
-			<h1
-			style={{
-				color:'black',
-				textAlign:'right'
-			}}>SSE DAY</h1>
-			<hr />
-			<span
-			style={{
-				color:'black',
-				textAlign:'left 2rem'
-			}}>Session [1]</span>
-			<span
-			style={{
-				color:'black',
-				textAlign:'right 2rem'
-			}}>Tech/Innovations.</span>
-			<img 
-			style={{
-				// object-fit: 'cover';
-				
+		<Card
+			sx={{
+				backgroundColor: "var(--accent-white)",
+				borderRadius: 0,
+				padding: "1rem",
+				color: "var(--text-color-dark)",
+				position: "relative",
+				containerType: "inline-size",
+				"&:after": {
+					content: '""',
+					position: "absolute",
+					bottom: 0,
+					left: 0,
+					right: 0,
+					height: "30%",
+					backgroundImage:
+						"linear-gradient(to top, color-mix(in lab, var(--deep-blue) 50%, transparent), transparent)",
+				},
 			}}
-			src="https://unsplash.it/1080/720" alt="" />
-			<div
-			style={{
-				width:'50%'
-			}}><h4
-			style={{
-				color:'black',
-				textAlign:'left 2rem'
-			}}>Session [01]</h4>
-			<hr />
-
-			</div>
-			<div
-			style={{
-				alignItems:'right',
-				width:'50%'
-	
-			}}>
-			<CustomButton
-					color="primary"
-					sx={{
-						alignSelf: "flex-start",
-					}}
-					onClick={() => {}}
+		>
+			<Typography
+				sx={{
+					color: "var(--text-color-dark)",
+					textAlign: "right",
+					fontSize: "clamp(2rem, 3vw + 1rem ,4rem)",
+					fontWeight: "bold",
+				}}
+			>
+				SSE DAY
+			</Typography>
+			<Divider
+				flexItem
+				variant="fullWidth"
+				sx={{ backgroundColor: "var(--body-color)" }}
+			/>
+			<Stack
+				spacing="0.75rem"
+				zIndex="1"
+			>
+				<Stack
+					direction="row"
+					justifyContent="space-between"
 				>
-					Read More
-				</CustomButton>
-				<CustomButton
-					color="primary"
+					<MonoTyp>Course 1</MonoTyp>
+					<MonoTyp>Tech/ Innovations.</MonoTyp>
+				</Stack>
+				<CardMedia
+					component="img"
+					src="https://unsplash.it/1080/720"
+					alt="Event Image"
 					sx={{
-						alignSelf: "flex-start",
+						width: "100%",
+						aspectRatio: "16/9",
+						objectFit: "cover",
 					}}
-					onClick={() => {}}
+				/>
+				<Box
+					sx={{
+						display: "flex",
+						flexDirection: "column",
+						gap: "1rem",
+						["@container (min-width: 500px)"]: {
+							display: "grid",
+							gridTemplateColumns: "1fr 1fr",
+							gridTemplateRows: "1fr auto",
+						},
+					}}
 				>
-					Registation.
-				</CustomButton>
-				</div>
-		</div>
+					<Stack
+						spacing="0.25rem"
+						gridRow="1/2"
+					>
+						<MonoTyp>Session [01]</MonoTyp>
+						<Divider
+							flexItem
+							variant="fullWidth"
+							sx={{ backgroundColor: "var(--body-color)" }}
+						/>
+						<MonoTyp
+							sx={{
+								fontSize: "1rem",
+								fontWeight: "400",
+							}}
+						>
+							Tuesday, [02.03.2024]
+						</MonoTyp>
+					</Stack>
+					<Typography
+						sx={{
+							lineHeight: "2.5ex",
+							fontSize: "0.9rem",
+							gridRow: "1 / 3",
+						}}
+					>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Itaque magnam obcaecati doloribus? Culpa commodi quidem
+						saepe repudiandae quis minima eius.
+					</Typography>
+					<Stack
+						sx={{
+							display: "flex",
+							gap: "0.5rem",
+							["@container (max-width: 500px)"]: {
+								display: "grid",
+								gridTemplateColumns: "1fr 1fr",
+							},
+						}}
+					>
+						<CustomButton onClick={() => {}}>Register</CustomButton>
+						<CustomButton
+							color="inherit"
+							onClick={() => {}}
+						>
+							Read More
+						</CustomButton>
+					</Stack>
+				</Box>
+			</Stack>
+		</Card>
 	);
 }
+
+const MonoTyp = styled(Typography)({
+	fontFamily: "var(--monospace-font)",
+	fontWeight: "500",
+	fontSize: "clamp(1rem, 2vw + 0.5rem ,1.125rem)",
+	lineHeight: "2.5ex",
+});

@@ -35,11 +35,11 @@ export default function MainContent() {
 						fontWeight="bold"
 						// fontSize="clamp(3rem, 10vw + 0.25rem, 8rem)"
 						// fontSize="clamp(5rem, 13vw + 1rem, 12rem)"
-						fontSize="clamp(1.5rem, 5vw + 0.125rem, 4rem)"
-						marginBlock="2rem"
+						fontSize="clamp(1.5rem, 5vw + 0.125rem, 5rem)"
+						marginBlock="clamp(0.5rem, 2vw + 0.125rem, 2rem)"
 						color="white"
 						// fontFamily="Bebas Neue"
-						fontFamily="Mionta Regular"
+						fontFamily="designsystem"
 						sx={{
 							pointerEvents: "none",
 						}}

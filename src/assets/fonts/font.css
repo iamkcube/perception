@@ -1,60 +1,24 @@
 @font-face
 {
-    font-family: 'Mark Pro';
-    src: url('markproextralight-webfont.woff2') format('woff2'),
-        url('markproextralight-webfont.woff') format('woff');
-    font-weight: 200;
+    font-family: 'designsystem';
+    src: url('design_system_d_w01_900r-webfont.woff2') format('woff2'),
+        url('design_system_d_w01_900r-webfont.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
 }
 
 @font-face
 {
-    font-family: 'Mark Pro';
-    src: url('markprolight-webfont.woff2') format('woff2'),
-        url('markprolight-webfont.woff') format('woff');
-    font-weight: 300;
+    font-family:"Mark Pro";
+    src: url('markpro-webfont.woff2') format('woff2'),
+        url('markpro-webfont.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
 }
 
 @font-face
 {
-    font-family: 'Mark Pro';
-    src: url('markprobook-webfont.woff2') format('woff2'),
-        url('markprobook-webfont.woff') format('woff');
-    font-weight: 400;
-    font-style: oblique;
-}
-
-@font-face
-{
-    font-family: 'Mark Pro';
-    src: url('markpromedium-webfont.woff2') format('woff2'),
-        url('markpromedium-webfont.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face
-{
-    font-family: 'Mark Pro';
-    src: url('markprobold-webfont.woff2') format('woff2'),
-        url('markprobold-webfont.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face
-{
-    font-family: 'Mark Pro';
-    src: url('markproheavy-webfont.woff2') format('woff2'),
-        url('markproheavy-webfont.woff') format('woff');
-    font-weight: 800;
-    font-style: normal;
-}
-
-@font-face
-{
-    font-family: 'Mark Pro';
+    font-family:"Mark Pro";
     src: url('markproblack-webfont.woff2') format('woff2'),
         url('markproblack-webfont.woff') format('woff');
     font-weight: 900;
@@ -63,25 +27,54 @@
 
 @font-face
 {
-    font-family: 'Mark Pro';
-    src: url('markpro-webfont.woff2') format('woff2'),
-        url('markpro-webfont.woff') format('woff');
-    font-weight: 400;
+    font-family:"Mark Pro";
+    src: url('markprobold-webfont.woff2') format('woff2'),
+        url('markprobold-webfont.woff') format('woff');
+    font-weight: bold;
     font-style: normal;
 }
 
 @font-face
 {
-    font-family: 'Mionta Regular';
-    src: url('mionta.ttf') format('ttf');
-    font-weight: 400;
+    font-family:"Mark Pro";
+    src: url('markprobook-webfont.woff2') format('woff2'),
+        url('markprobook-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: oblique;
+}
+
+@font-face
+{
+    font-family:"Mark Pro";
+    src: url('markproextralight-webfont.woff2') format('woff2'),
+        url('markproextralight-webfont.woff') format('woff');
+    font-weight: 200;
     font-style: normal;
 }
 
 @font-face
 {
-    font-family: 'DesignSystemDW01-900R';
-    src: url('DesignSystem.ttf') format('ttf');
-    font-weight: 400;
+    font-family:"Mark Pro";
+    src: url('markproheavy-webfont.woff2') format('woff2'),
+        url('markproheavy-webfont.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family:"Mark Pro";
+    src: url('markprolight-webfont.woff2') format('woff2'),
+        url('markprolight-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family:"Mark Pro";
+    src: url('markpromedium-webfont.woff2') format('woff2'),
+        url('markpromedium-webfont.woff') format('woff');
+    font-weight: 500;
     font-style: normal;
 }

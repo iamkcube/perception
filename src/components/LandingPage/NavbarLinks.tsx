@@ -29,10 +29,10 @@ export default function NavbarLinks({
 		white-space: nowrap;
 		${forDrawer && forDrawerLinkStyles}
 		&:hover {
-			color: color-mix(in lab, var(--accent-primary), white 30%);
+			color: color-mix(in lab, var(--accent-primary), white ${forDrawer ? "0%" : "30%"});
 		}
 		&:before {
-			content: "";
+			${!forDrawer && 'content: "";'}
 			display: inline-block;
 			position: absolute;
 			bottom: 0;
