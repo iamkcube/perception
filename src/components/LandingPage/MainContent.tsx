@@ -30,14 +30,16 @@ export default function MainContent() {
 					<Typography
 						variant="h1"
 						align="center"
-						letterSpacing={isBigDevice ? "0.3ch" : "0.05ch"}
+						letterSpacing={isBigDevice ? "0.15ch" : "0.025ch"}
 						textTransform="uppercase"
 						fontWeight="bold"
 						// fontSize="clamp(3rem, 10vw + 0.25rem, 8rem)"
-						fontSize="clamp(5rem, 13vw + 1rem, 12rem)"
+						// fontSize="clamp(5rem, 13vw + 1rem, 12rem)"
+						fontSize="clamp(1.5rem, 5vw + 0.125rem, 4rem)"
+						marginBlock="2rem"
 						color="white"
-						fontFamily="Bebas Neue"
-						// fontFamily="Mionta"
+						// fontFamily="Bebas Neue"
+						fontFamily="Mionta Regular"
 						sx={{
 							pointerEvents: "none",
 						}}
@@ -47,7 +49,7 @@ export default function MainContent() {
 					<Typography
 						variant="h1"
 						align="center"
-						fontSize="clamp(0.95rem, 3vw + 0.25rem, 2rem)"
+						fontSize="clamp(0.95rem, 3vw + 0.25rem, 1.75rem)"
 						fontFamily="var(--monospace-font)"
 						color="var(--accent-white)"
 					>
