@@ -15,6 +15,7 @@ export default function HowToReach() {
 				paddingInline: "clamp(2rem, 4vw + 1rem , 4rem)",
 				paddingBlock: "3rem",
 				rowGap: isBigDevice ? "3rem" : "1rem",
+				columnGap: isBigDevice ? "3rem" : "1rem",
 			}}
 		>
 			<Typography
