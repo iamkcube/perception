@@ -1,40 +1,18 @@
 import { useOtherContext } from "@/contexts/OtherContext";
-import { Box, Divider, Stack, Typography } from "@mui/material";
+import { namesObj } from "@assets/ts/namesObj";
+import { Add } from "@mui/icons-material";
+import {
+	Avatar,
+	Box,
+	Divider,
+	IconButton,
+	Typography,
+	styled,
+} from "@mui/material";
 import React from "react";
 
 export default function MeetOurTeam() {
 	const { isBigDevice } = useOtherContext();
-
-	const namesObj = [
-		{
-			name: "Kalinga Kumar Khatua",
-			imageUrl: "https:source.unsplash.com/480x480?profile,humana",
-		},
-		{
-			name: "Smruti Soumyak Pradhan",
-			imageUrl: "https:source.unsplash.com/480x480?profile,humanm",
-		},
-		{
-			name: "Ankita Sahu",
-			imageUrl: "https:source.unsplash.com/480x480?profile,humanu",
-		},
-		{
-			name: "Madhusmita Pradhan",
-			imageUrl: "https:source.unsplash.com/480x480?profile,humann",
-		},
-		{
-			name: "Ankita Sunani",
-			imageUrl: "https:source.unsplash.com/480x480?profile,humani",
-		},
-		{
-			name: "SmrutiBinda Khuntia",
-			imageUrl: "https:source.unsplash.com/480x480?profile,humane",
-		},
-		{
-			name: "Debasis Sahoo",
-			imageUrl: "https:source.unsplash.com/480x480?profile,humano",
-		},
-	];
 
 	return (
 		<Box
@@ -78,18 +56,82 @@ export default function MeetOurTeam() {
 				sx={{
 					// gridColumn: isBigDevice ? "1/3" : "auto",
 					display: "grid",
+					gap: "2rem",
+					marginBlock: "2rem",
 					gridTemplateColumns: isBigDevice
-						? "repeat(3, 1fr)"
+						? "repeat(2, 1fr)"
 						: "auto",
 				}}
 			>
-				{namesObj.map(({ name, imageUrl }) => (
+				{namesObj.map(({ name, imageUrl, socialLink }) => (
 					<React.Fragment key={name}>
-						<Stack
-							direction={isBigDevice ? "column" : "row"}
-							alignItems={isBigDevice ? "start" : "end"}
-							padding="1rem"
-							spacing="1rem"
+						<Box
+							display="flex"
+							// p={1.5}
+							gap={2}
+							sx={{ alignItems: "center" }}
+						>
+							<Box>
+								<Avatar
+									src={imageUrl}
+									sx={{
+										borderRadius: 0,
+										width: 48,
+										height: 48,
+									}}
+								/>
+							</Box>
+							<Box
+								sx={{
+									flex: "auto",
+									display: "grid",
+									gridTemplateRows: "1fr auto",
+								}}
+							>
+								<Typography
+									sx={{
+										color: "#4d4b5f",
+										lineHeight: 1.2,
+										fontWeight: 700,
+										marginBottom: "0.125rem",
+									}}
+								>
+									{name}
+								</Typography>
+								<Typography
+									sx={{
+										color: "#4d4b5f",
+										lineHeight: 1.2,
+										fontWeight: 700,
+										marginBottom: "0.125rem",
+									}}
+								>
+									@
+									{
+										socialLink.split("/")[
+											socialLink.split("/").length - 1
+										]
+									}
+								</Typography>
+							</Box>
+							<Box ml={1}>
+								<StyledIconButton
+									size="small"
+									onClick={() =>
+										window.open(socialLink, "_blank")
+									}
+								>
+									<Add />
+								</StyledIconButton>
+							</Box>
+						</Box>
+						{/* 
+						<Card
+							elevation={0}
+							sx={{
+								backgroundColor: "var(--accent-white)",
+								color: "var(--text-color-dark)",
+							}}
 						>
 							<Box maxWidth="30%">
 								<img
@@ -113,11 +155,11 @@ export default function MeetOurTeam() {
 							>
 								{name}
 							</Typography>
-						</Stack>
+						</Card> */}
 						{!isBigDevice && (
 							<Divider
 								flexItem
-								variant="inset"
+								variant="fullWidth"
 								sx={{ backgroundColor: "var(--body-color)" }}
 							/>
 						)}
@@ -127,3 +169,10 @@ export default function MeetOurTeam() {
 		</Box>
 	);
 }
+
+const StyledIconButton = styled(IconButton)(() => ({
+	color: "rgba(0, 0, 0, 0.54)",
+	"&:hover": {
+		color: "#000",
+	},
+}));

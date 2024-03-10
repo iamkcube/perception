@@ -37,6 +37,7 @@ export default function MainContent() {
 						fontSize="clamp(5rem, 13vw + 1rem, 12rem)"
 						color="white"
 						fontFamily="Bebas Neue"
+						// fontFamily="Mionta"
 						sx={{
 							pointerEvents: "none",
 						}}
