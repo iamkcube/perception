@@ -15,6 +15,10 @@ export default function MeetOurTeam() {
 			imageUrl: "https:source.unsplash.com/480x480?profile,humanm",
 		},
 		{
+			name: "Debasis Sahoo",
+			imageUrl: "https:source.unsplash.com/480x480?profile,humano",
+		},
+		{
 			name: "Ankita Sahu",
 			imageUrl: "https:source.unsplash.com/480x480?profile,humanu",
 		},
@@ -30,10 +34,7 @@ export default function MeetOurTeam() {
 			name: "SmrutiBinda Khuntia",
 			imageUrl: "https:source.unsplash.com/480x480?profile,humane",
 		},
-		{
-			name: "Debasis Sahoo",
-			imageUrl: "https:source.unsplash.com/480x480?profile,humano",
-		},
+		
 	];
 
 	return (
