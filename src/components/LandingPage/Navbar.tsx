@@ -3,7 +3,7 @@ import { useOtherContext } from "@/contexts/OtherContext";
 import NavDrawer from "@landingpage/NavDrawer";
 import NavbarLinks from "@landingpage/NavbarLinks";
 import MenuIcon from "@mui/icons-material/Menu";
-import { IconButton, Avatar } from "@mui/material";
+import { IconButton, Avatar, Box } from "@mui/material";
 import CustomButton from "@utils/CustomButton";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -15,8 +15,11 @@ export default function Navbar() {
 	const { isBigDevice, isSmallDevice } = useOtherContext();
 
 	return (
-		<nav
-			style={{
+		<Box
+			role="navigation"
+			sx={{
+				"--background":
+					"color-mix(in lab, var(--body-color) 40%, transparent)",
 				position: "sticky",
 				top: 0,
 				display: "grid",
@@ -26,12 +29,10 @@ export default function Navbar() {
 				alignItems: "center",
 				minHeight: "var(--navbar-height)",
 				marginInline: "clamp(2rem, 4vw + 1rem , 4rem)",
-				backgroundColor:
-					"color-mix(in lab, var(--body-color) 20%, transparent)",
+				backgroundColor: "var(--background)",
 				zIndex: 100,
 				// full-bleed
-				boxShadow:
-					"0 0 0 100vmax color-mix(in lab, var(--body-color) 20%, transparent)",
+				boxShadow: "0 0 0 100vmax var(--background)",
 				clipPath: "inset(0 -100vmax)",
 			}}
 		>
@@ -77,6 +78,6 @@ export default function Navbar() {
 					<MenuIcon />
 				</IconButton>
 			)}
-		</nav>
+		</Box>
 	);
 }

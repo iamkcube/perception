@@ -11,7 +11,7 @@ export default function MainContent() {
 			<Box
 				sx={{
 					display: "grid",
-					minHeight: "calc(100vh - var(--navbar-height))",
+					minHeight: "calc(100svh - var(--navbar-height))",
 					gridTemplateColumns: "1fr auto",
 					marginInline: "clamp(2rem, 4vw + 1rem , 4rem)",
 				}}

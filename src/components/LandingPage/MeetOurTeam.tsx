@@ -1,142 +1,129 @@
-export default function MeetOurTeam() {
-	return (
-		<div style={{ marginInline: "clamp(2rem, 4vw + 1rem , 4rem)" }}>
-			<h2
-				style={{
-					textAlign: "center",
-					fontSize: "3rem",
-					backgroundColor: "black",
-				}}
-			>
-				Meet our team{" "}
-			</h2>
+import { useOtherContext } from "@/contexts/OtherContext";
+import { Box, Divider, Stack, Typography } from "@mui/material";
+import React from "react";
 
-			<div
-				style={{
-					display: "flex",
-					flexWrap: "wrap",
-					justifyContent: "center",
-					gap: "2rem",
-					backgroundColor: "black",
+export default function MeetOurTeam() {
+	const { isBigDevice } = useOtherContext();
+
+	const namesObj = [
+		{
+			name: "Kalinga Kumar Khatua",
+			imageUrl: "https:source.unsplash.com/480x480?profile,humana",
+		},
+		{
+			name: "Smruti Soumyak Pradhan",
+			imageUrl: "https:source.unsplash.com/480x480?profile,humanm",
+		},
+		{
+			name: "Ankita Sahu",
+			imageUrl: "https:source.unsplash.com/480x480?profile,humanu",
+		},
+		{
+			name: "Madhusmita Pradhan",
+			imageUrl: "https:source.unsplash.com/480x480?profile,humann",
+		},
+		{
+			name: "Ankita Sunani",
+			imageUrl: "https:source.unsplash.com/480x480?profile,humani",
+		},
+		{
+			name: "SmrutiBinda Khuntia",
+			imageUrl: "https:source.unsplash.com/480x480?profile,humane",
+		},
+		{
+			name: "Debasis Sahoo",
+			imageUrl: "https:source.unsplash.com/480x480?profile,humano",
+		},
+	];
+
+	return (
+		<Box
+			style={{
+				position: "relative",
+				display: "grid",
+				backgroundColor: "var(--accent-white)",
+				color: "var(--text-color-dark)",
+				gridTemplateColumns: isBigDevice ? "1fr 1fr" : "auto",
+				gridTemplateRows: "auto 1fr",
+				paddingInline: "clamp(2rem, 4vw + 1rem , 4rem)",
+				paddingBlock: "3rem",
+				rowGap: isBigDevice ? "3rem" : "1rem",
+			}}
+		>
+			<Typography
+				sx={{
+					fontFamily: "var(--monospace-font)",
+					fontWeight: "500",
 				}}
 			>
-				<div
-					style={{
-						backgroundColor: "grey",
-						margin: "1rem",
-						padding: "1rem",
-						width: "20%",
-						borderRadius: "1rem",
-					}}
-				>
-					<img
-						style={{ height: "8rem", margin: "auto" }}
-						src="https://fastly.picsum.photos/id/516/1080/720.jpg?hmac=_lNpyxgHTiAMdJncpoWeYSaN69YiW6exL7gwTTUHwYI"
-						alt=""
-					/>
-					<h3 style={{ textAlign: "center" }}>
-						Kalinga Kumar Khatua
-					</h3>
-				</div>
-				<div
-					style={{
-						backgroundColor: "grey",
-						margin: "1rem",
-						padding: "1rem",
-						width: "20%",
-						borderRadius: "1rem",
-					}}
-				>
-					<img
-						style={{ height: "8rem", margin: "auto" }}
-						src="https://fastly.picsum.photos/id/516/1080/720.jpg?hmac=_lNpyxgHTiAMdJncpoWeYSaN69YiW6exL7gwTTUHwYI"
-						alt=""
-					/>
-					<h3 style={{ textAlign: "center" }}>
-						Smruti Soumyak Pradhan
-					</h3>
-				</div>
-				<div
-					style={{
-						backgroundColor: "grey",
-						margin: "1rem",
-						padding: "1rem",
-						width: "20%",
-						borderRadius: "1rem",
-					}}
-				>
-					<img
-						style={{ height: "8rem", margin: "auto" }}
-						src="https://fastly.picsum.photos/id/516/1080/720.jpg?hmac=_lNpyxgHTiAMdJncpoWeYSaN69YiW6exL7gwTTUHwYI"
-						alt=""
-					/>
-					<h3 style={{ textAlign: "center" }}>Ankita Sahu</h3>
-				</div>
-				<div
-					style={{
-						backgroundColor: "grey",
-						margin: "1rem",
-						padding: "1rem",
-						width: "20%",
-						borderRadius: "1rem",
-					}}
-				>
-					<img
-						style={{ height: "8rem", margin: "auto" }}
-						src="https://fastly.picsum.photos/id/516/1080/720.jpg?hmac=_lNpyxgHTiAMdJncpoWeYSaN69YiW6exL7gwTTUHwYI"
-						alt=""
-					/>
-					<h3 style={{ textAlign: "center" }}>Madhusmita Pradhan</h3>
-				</div>
-				<div
-					style={{
-						backgroundColor: "grey",
-						margin: "1rem",
-						padding: "1rem",
-						width: "20%",
-						borderRadius: "1rem",
-					}}
-				>
-					<img
-						style={{ height: "8rem", margin: "auto" }}
-						src="https://fastly.picsum.photos/id/516/1080/720.jpg?hmac=_lNpyxgHTiAMdJncpoWeYSaN69YiW6exL7gwTTUHwYI"
-						alt=""
-					/>
-					<h3 style={{ textAlign: "center" }}>Ankita Sunani</h3>
-				</div>
-				<div
-					style={{
-						backgroundColor: "grey",
-						margin: "1rem",
-						padding: "1rem",
-						width: "20%",
-						borderRadius: "1rem",
-					}}
-				>
-					<img
-						style={{ height: "8rem", margin: "auto" }}
-						src="https://fastly.picsum.photos/id/516/1080/720.jpg?hmac=_lNpyxgHTiAMdJncpoWeYSaN69YiW6exL7gwTTUHwYI"
-						alt=""
-					/>
-					<h3 style={{ textAlign: "center" }}>SmrutiBinda Khuntia</h3>
-				</div>
-				<div
-					style={{
-						backgroundColor: "grey",
-						margin: "1rem",
-						padding: "1rem",
-						width: "20%",
-						borderRadius: "1rem",
-					}}
-				>
-					<img
-						style={{ height: "8rem", margin: "auto" }}
-						src="https://fastly.picsum.photos/id/516/1080/720.jpg?hmac=_lNpyxgHTiAMdJncpoWeYSaN69YiW6exL7gwTTUHwYI"
-						alt=""
-					/>
-					<h3 style={{ textAlign: "center" }}>Debasis Sahoo</h3>
-				</div>
-			</div>
-		</div>
+				[05]
+			</Typography>
+			<Typography
+				sx={{
+					fontFamily: "var(--monospace-font)",
+					fontWeight: "500",
+				}}
+			>
+				&#10010; [It's us]
+			</Typography>
+			<h1
+				id="MeetOurTeam"
+				style={{
+					fontSize: "clamp(2.5rem, 4vw + 1rem , 4rem)",
+				}}
+			>
+				Meet our team
+			</h1>
+			<Box
+				sx={{
+					// gridColumn: isBigDevice ? "1/3" : "auto",
+					display: "grid",
+					gridTemplateColumns: isBigDevice
+						? "repeat(3, 1fr)"
+						: "auto",
+				}}
+			>
+				{namesObj.map(({ name, imageUrl }) => (
+					<React.Fragment key={name}>
+						<Stack
+							direction={isBigDevice ? "column" : "row"}
+							alignItems={isBigDevice ? "start" : "end"}
+							padding="1rem"
+							spacing="1rem"
+						>
+							<Box maxWidth="30%">
+								<img
+									src={imageUrl}
+									width={400}
+									height={400}
+									style={{
+										width: "100%",
+										height: "100%",
+										aspectRatio: "1/1",
+										objectFit: "cover",
+									}}
+									alt={name}
+								/>
+							</Box>
+							<Typography
+								fontSize="clamp(0.9rem , 3vw , 1.05rem)"
+								fontFamily="var(--monospace-font)"
+								fontWeight="500"
+								lineHeight="2ch"
+							>
+								{name}
+							</Typography>
+						</Stack>
+						{!isBigDevice && (
+							<Divider
+								flexItem
+								variant="inset"
+								sx={{ backgroundColor: "var(--body-color)" }}
+							/>
+						)}
+					</React.Fragment>
+				))}
+			</Box>
+		</Box>
 	);
 }

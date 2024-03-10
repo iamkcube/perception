@@ -10,7 +10,7 @@ export default function Background() {
 				top: "0",
 				left: "0",
 				overflow: "hidden",
-				height: "100vh",
+				height: "100svh",
 				width: "100%",
 				margin: "auto",
 				filter: "blur( clamp( 24px, 7vw + 1px , 80px )) brightness(100%) contrast(125%)",

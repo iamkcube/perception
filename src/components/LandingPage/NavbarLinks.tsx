@@ -68,7 +68,7 @@ export default function NavbarLinks({
 		>
 			<ListItem>
 				<Link
-					to="#Home"
+					to=""
 					css={linkStyle}
 					onClick={() => window.scrollTo(0, 0)}
 				>
@@ -77,7 +77,7 @@ export default function NavbarLinks({
 			</ListItem>
 			<ListItem>
 				<Link
-					to="#AboutUs"
+					to=""
 					css={linkStyle}
 					onClick={() =>
 						document.getElementById("AboutUs")?.scrollIntoView()
@@ -96,7 +96,7 @@ export default function NavbarLinks({
 			</ListItem>
 			<ListItem>
 				<Link
-					to="#FAQ"
+					to=""
 					css={linkStyle}
 					onClick={() =>
 						document.getElementById("FAQ")?.scrollIntoView()
@@ -107,13 +107,24 @@ export default function NavbarLinks({
 			</ListItem>
 			<ListItem>
 				<Link
-					to="#HowToReach"
+					to=""
 					css={linkStyle}
 					onClick={() =>
 						document.getElementById("HowToReach")?.scrollIntoView()
 					}
 				>
 					How To Reach
+				</Link>
+			</ListItem>
+			<ListItem>
+				<Link
+					to=""
+					css={linkStyle}
+					onClick={() =>
+						document.getElementById("LastYear")?.scrollIntoView()
+					}
+				>
+					Last Year
 				</Link>
 			</ListItem>
 			<ListItem>

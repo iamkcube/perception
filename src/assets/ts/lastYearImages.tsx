@@ -1,0 +1,18 @@
+export const lastYearImages = [
+	"https://drive.fife.usercontent.google.com/u/0/d/1OU6ft4030kyHFZqSH_Wjgb8yvhOl0-Oo=w225-h214-p-k-rw-v1-nu-iv1",
+	"https://drive.fife.usercontent.google.com/u/0/d/1M4haHHrFLU84-qpzH_MJHGFBtqgp3OJZ=w225-h214-p-k-rw-v1-nu-iv1",
+	"https://drive.fife.usercontent.google.com/u/0/d/1DJQ3e-Nn0nZGdhIKTL6DWo-9ZFJKWPCo=w225-h214-p-k-rw-v1-nu-iv1",
+	"https://drive.fife.usercontent.google.com/u/0/d/1hRnacbmbwYU89r44Sjsqsw30S1ozfaor=w225-h214-p-k-rw-v1-nu-iv1",
+	"https://drive.fife.usercontent.google.com/u/0/d/1h7RwjEY1p5-PbgjgvhO9n5ldsZJAFfI9=w225-h214-p-k-rw-v1-nu-iv1",
+	"https://drive.fife.usercontent.google.com/u/0/d/1e_U7eM4kpZ5Rt-Eiv2-z7OeC-iXk4d0g=w225-h214-p-k-rw-v1-nu-iv1",
+	"https://drive.fife.usercontent.google.com/u/0/d/1dIWUIH_WMTwkJtJ2mdablcD0ZBTZfaZh=w225-h214-p-k-rw-v1-nu-iv1",
+	"https://drive.fife.usercontent.google.com/u/0/d/1ckAgihWOcNvkeGkcHVV3ghwa_lVfO2p1=w225-h214-p-k-rw-v1-nu-iv1",
+	"https://drive.fife.usercontent.google.com/u/0/d/1WBPuDVoou9TxxWL69aGEzb7jmtn4nZGL=w225-h214-p-k-rw-v1-nu-iv1",
+	"https://drive.fife.usercontent.google.com/u/0/d/1U_VYF84H93WWThoF01AovhUJmYdYUm1m=w225-h214-p-k-rw-v1-nu-iv1",
+	"https://drive.fife.usercontent.google.com/u/0/d/1ENeKSHG3cPuGEsq0aFdagjtrNqtDfUrB=w225-h214-p-k-rw-v1-nu-iv1",
+	"https://drive.fife.usercontent.google.com/u/0/d/1z0iZgH8fsv6yokv_f38gOwLvBEVMV4kg=w225-h214-p-k-rw-v1-nu-iv1",
+	"https://drive.fife.usercontent.google.com/u/0/d/1uiz1f1189bbhBijti054HOg1HEtvlpa2=w225-h214-p-k-rw-v1-nu-iv1",
+	"https://drive.fife.usercontent.google.com/u/0/d/1lzfojT-rzfMenpdO9ArGMOBxvTy7kuqJ=w225-h214-p-k-rw-v1-nu-iv1",
+	"https://drive.fife.usercontent.google.com/u/0/d/1cF4RxBZs9jhSrGzLaEItT8k_kiM6t6vi=w225-h214-p-k-rw-v1-nu-iv1",
+	"https://drive.fife.usercontent.google.com/u/0/d/1RnjCRtg1zIG2Sghvt1OJoNbUDvXVNhuy=w225-h214-p-k-rw-v1-nu-iv1",
+];

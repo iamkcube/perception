@@ -37,7 +37,7 @@ export default function AboutUs() {
 			<h1
 				id="AboutUs"
 				style={{
-					fontSize: "3rem",
+					fontSize: "clamp(2.5rem, 4vw + 1rem , 4rem)",
 				}}
 			>
 				About us
@@ -47,6 +47,7 @@ export default function AboutUs() {
 					src="https://source.unsplash.com/1080x720/?techfest"
 					width={1080}
 					height={720}
+					loading="lazy"
 					style={{
 						width: "100%",
 						height: "100%",

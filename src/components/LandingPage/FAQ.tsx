@@ -43,7 +43,7 @@ export default function FAQ() {
 			<h1
 				id="FAQ"
 				style={{
-					fontSize: "4rem",
+					fontSize: "clamp(2.5rem, 4vw + 1rem , 4rem)",
 				}}
 			>
 				FAQ
@@ -52,6 +52,7 @@ export default function FAQ() {
 				<Stack>
 					{[...Array(9)].map((_, index) => (
 						<Accordion
+							key={index}
 							sx={{
 								backgroundColor: "var(--body-color)",
 							}}

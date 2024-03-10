@@ -37,25 +37,26 @@ export default function HowToReach() {
 				<h1
 					id="HowToReach"
 					style={{
-						fontSize: "3rem",
+						fontSize: "clamp(2.5rem, 4vw + 1rem , 4rem)",
 					}}
 				>
 					How to reach
 				</h1>
-				<Typography
+				<Stack
+					spacing="0.25rem"
 					sx={{
 						fontFamily: "var(--monospace-font)",
 						maxWidth: "60ch",
 					}}
 				>
-					Perception is the Annual Tech Fest of Odisha University of
-					Technology and Research, Bhubaneswar. This is a three day
-					long festival for technocrats with a bunch of technical and
-					fun filled events. This premier inter college event of our
-					esteemed University allows students from different corners
-					of the state to challenge, compete and show their technical
-					abundance.
-				</Typography>
+					<Typography fontSize="1.25rem">
+						ODISHA UNIVERSITY OF TECHNOLOGY AND RESEARCH
+					</Typography>{" "}
+					<Typography>
+						Ghatikia, Mahalaxmi Vihar Bhubaneswar-751029, India
+					</Typography>{" "}
+					<Typography>Phone: 0674-2386075</Typography>
+				</Stack>
 			</Stack>
 			<iframe
 				src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14970.358729897278!2d85.776639!3d20.275845!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19a7f9d486f7c3%3A0xde71ead59307dcca!2sOdisha%20University%20of%20Technology%20and%20Research!5e0!3m2!1sen!2sin!4v1709994524634!5m2!1sen!2sin"
@@ -66,7 +67,7 @@ export default function HowToReach() {
 				style={{
 					border: 0,
 					aspectRatio: isBigDevice ? "4/3" : "3/4",
-				}}	
+				}}
 			/>
 		</Box>
 	);
