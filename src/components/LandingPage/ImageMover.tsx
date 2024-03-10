@@ -91,6 +91,7 @@ export default function ImageMover() {
 		>
 			{lastYearImages.map((src, index) => (
 				<img
+					key={index}
 					className="lastYearImages"
 					crossOrigin="anonymous"
 					style={{

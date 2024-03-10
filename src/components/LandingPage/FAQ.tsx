@@ -1,4 +1,5 @@
 import { useOtherContext } from "@/contexts/OtherContext";
+import { FAQQuesAndAns } from "@assets/ts/FAQQuesAndAns";
 import AddIcon from "@mui/icons-material/Add";
 import {
 	Accordion,
@@ -50,7 +51,7 @@ export default function FAQ() {
 			</h1>
 			<Stack spacing="2rem">
 				<Stack>
-					{[...Array(9)].map((_, index) => (
+					{FAQQuesAndAns.map(({ question, answer }, index) => (
 						<Accordion
 							key={index}
 							sx={{
@@ -62,13 +63,9 @@ export default function FAQ() {
 								aria-controls={`panel${index}-content`}
 								id={`panel${index}-header`}
 							>
-								Accordion {index}
+								{question}
 							</AccordionSummary>
-							<AccordionDetails>
-								Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit. Suspendisse malesuada lacus ex,
-								sit amet blandit leo lobortis eget.
-							</AccordionDetails>
+							<AccordionDetails>{answer}</AccordionDetails>
 						</Accordion>
 					))}
 				</Stack>
