@@ -27,9 +27,16 @@ export default function NavbarLinks({
 		text-transform: uppercase;
 		cursor: pointer;
 		white-space: nowrap;
+		transition: background-color 250ms ease-out;
 		${forDrawer && forDrawerLinkStyles}
 		&:hover {
-			color: color-mix(in lab, var(--accent-primary), white ${forDrawer ? "0%" : "30%"});
+			color: color-mix(
+				in lab,
+				var(--accent-primary),
+				white ${forDrawer ? "0%" : "30%"}
+			);
+			${forDrawer &&
+			"background-color: color-mix(in srgb, var(--accent-white) 5%, transparent);"}
 		}
 		&:before {
 			${!forDrawer && 'content: "";'}

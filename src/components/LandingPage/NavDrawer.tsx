@@ -17,6 +17,13 @@ export default function NavDrawer({
 				open={isDrawerOpen}
 				onClose={() => setIsDrawerOpen(false)}
 				disableRestoreFocus
+				PaperProps={{
+					style: {
+						backgroundColor:
+							"color-mix(in lab, var(--body-color), transparent)",
+						backdropFilter: "blur(8px)",
+					},
+				}}
 			>
 				<NavbarLinks
 					forDrawer
