@@ -2,7 +2,15 @@ import { useAuth } from "@/contexts/AuthContext";
 import { useOtherContext } from "@/contexts/OtherContext";
 import EventCard from "@eventspage/EventCard";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { Avatar, Box, IconButton, Typography } from "@mui/material";
+import
+	{
+		Avatar,
+		Box,
+		IconButton,
+		Stack,
+		Typography
+	} from "@mui/material";
+import CustomChip from "@utils/CustomChip";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function EventsPage() {
@@ -34,12 +42,13 @@ export default function EventsPage() {
 			}
 			marginInline={isBigDevice ? "auto" : "auto"}
 			marginBlock="4rem"
-		>
+			>
 			<Box
 				sx={{
 					display: "grid",
 					gridTemplateColumns: "1fr auto 1fr",
 					justifyContent: "center",
+					marginBlock:"2rem"
 				}}
 			>
 				<IconButton
@@ -70,6 +79,63 @@ export default function EventsPage() {
 					</Link>
 				)}
 			</Box>
+			<Stack
+				direction={isBigDevice ? "row" : "column"}
+				alignItems={isBigDevice ? "center" : "flex-start"}
+				spacing={isBigDevice ? "1.5rem" : "0.5rem"}
+			>
+				<Typography sx={{ whiteSpace: "nowrap" }}>Filter by</Typography>
+				<Box
+					sx={{
+						display: "grid",
+						gridTemplateColumns:
+							"repeat(auto-fit, minmax(9ch, 1fr))",
+						alignItems: isBigDevice ? "center" : "flex-start",
+						gap: "0.5rem",
+					}}
+				>
+					<CustomChip
+						label="Zairza"
+						onClick={() => {}}
+					/>
+					<CustomChip
+						label="Spectrum"
+						onClick={() => {}}
+					/>
+					<CustomChip
+						label="Energy"
+						onClick={() => {}}
+					/>
+					<CustomChip
+						label="SAE"
+						onClick={() => {}}
+					/>
+					<CustomChip
+						label="Codechef"
+						onClick={() => {}}
+					/>
+					<CustomChip
+						label="GDSC"
+						onClick={() => {}}
+					/>
+					<CustomChip
+						label="ASME"
+						onClick={() => {}}
+					/>
+					<CustomChip
+						label="Aerospace"
+						onClick={() => {}}
+					/>
+					<CustomChip
+						label="Biozo"
+						onClick={() => {}}
+					/>
+					<CustomChip
+						label="Civicon"
+						onClick={() => {}}
+					/>
+				</Box>
+			</Stack>
 			<Box
 				sx={{
 					display: "grid",
