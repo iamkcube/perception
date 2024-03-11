@@ -1,5 +1,5 @@
 import NavbarLinks from "@landingpage/NavbarLinks";
-import Drawer from "@mui/material/Drawer";
+import { Drawer } from "@mui/material";
 
 interface NavDrawerProps {
 	isDrawerOpen: boolean;

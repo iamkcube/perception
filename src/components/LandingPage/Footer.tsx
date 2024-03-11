@@ -16,11 +16,8 @@ export default function Footer() {
 			alignItems="center"
 			width="80vw"
 			gap={isBigDevice ? "auto" : "0.25rem"}
-			marginInlineStart="40%"
+			marginInline="auto"
 			marginBlock="2rem 1rem"
-			sx={{
-				transform: "translateX(-40%)",
-			}}
 		>
 			<Typography color="var(--accent-blue)">
 				&copy; All Rights Reserved
