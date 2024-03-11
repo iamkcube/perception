@@ -1,10 +1,8 @@
 import { useAuth } from "@/contexts/AuthContext";
 import { useOtherContext } from "@/contexts/OtherContext";
-import { handleGetAllEvents } from "@api/dbAPI";
 import EventCard from "@eventspage/EventCard";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Avatar, Box, IconButton, Typography } from "@mui/material";
-import { useQuery } from "@tanstack/react-query";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function EventsPage() {
@@ -13,14 +11,14 @@ export default function EventsPage() {
 	const navigate = useNavigate();
 	const { userLoggedIn, userDoc, currentUser } = useAuth();
 
-	const {
-		data: eventsList,
-		// isLoading,
-		// isError,
-	} = useQuery({
-		queryFn: async () => await handleGetAllEvents(),
-		queryKey: ["eventsList"],
-	});
+	// const {
+	// 	data: eventsList,
+	// 	// isLoading,
+	// 	// isError,
+	// } = useQuery({
+	// 	queryFn: async () => await handleGetAllEvents(),
+	// 	queryKey: ["eventsList"],
+	// });
 
 	const fancyFontStyles = {
 		// fontFamily: "var(--fancy-font)",
