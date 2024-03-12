@@ -153,7 +153,7 @@ export default function SignupPage({
 			>
 				<CustomButton
 					type="submit"
-					// contained
+					variant="outlined"
 					color="secondary"
 					onClick={(e) => {
 						e.preventDefault();
@@ -164,7 +164,7 @@ export default function SignupPage({
 					Sign Up
 				</CustomButton>
 				<CustomButton
-					// contained
+					variant="outlined"
 					color="secondary"
 					onClick={mutateSignUpWithGoogle}
 					loading={isLoadingSignUpWithGoogle}
@@ -173,7 +173,7 @@ export default function SignupPage({
 				</CustomButton>
 				{userLoggedIn && (
 					<CustomButton
-						// contained
+						variant="outlined"
 						color="secondary"
 						onClick={mutateSignOut}
 						loading={isLoadingSignOut}

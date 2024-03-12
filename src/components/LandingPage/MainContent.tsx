@@ -11,6 +11,7 @@ let iteration = 0;
 export default function MainContent() {
 	const { isBigDevice } = useOtherContext();
 	const [text, setText] = useState("PERCEPTION");
+	const [letterWidth, setLetterWidth] = useState<"1.1ch" | "auto">("1.1ch");
 	const h1Ref = useRef<HTMLSpanElement | null>(null);
 
 	const handleMouseOver = () => {
@@ -34,6 +35,9 @@ export default function MainContent() {
 
 			iteration += 1 / 9;
 			console.log("🚀 ~ interval ~ iteration:", iteration);
+			if (iteration > 10) {
+				setLetterWidth("auto");
+			}
 		}, 35);
 
 		return () => {
@@ -64,7 +68,7 @@ export default function MainContent() {
 							 drop-shadow(0 0 100px var(--deep-blue))`,
 						animation:
 							"heading-animation 10s ease-in-out infinite alternate",
-						minWidth: "",
+						// minWidth: "",
 					}}
 				>
 					<Typography
@@ -76,7 +80,7 @@ export default function MainContent() {
 						fontWeight="bold"
 						// fontSize="clamp(3rem, 10vw + 0.25rem, 8rem)"
 						// fontSize="clamp(5rem, 13vw + 1rem, 12rem)"
-						fontSize="clamp(1.5rem, 5vw + 0.125rem, 5rem)"
+						fontSize="clamp(1.35rem, 5vw + 0.125rem, 5rem)"
 						marginBlock="clamp(0.5rem, 2vw + 0.125rem, 2rem)"
 						color="white"
 						// fontFamily="Bebas Neue"
@@ -84,9 +88,22 @@ export default function MainContent() {
 						onMouseOver={handleMouseOver}
 						sx={{
 							pointerEvents: "none",
+							display: "flex",
+							justifyContent: "center",
+							gap: isBigDevice ? "0.15ch" : "0.025ch",
 						}}
 					>
-						{text}
+						{text.split("").map((letter, index) => (
+							<span
+								key={index}
+								style={{
+									display: "inline-block",
+									width: letterWidth,
+								}}
+							>
+								{letter}
+							</span>
+						))}
 					</Typography>
 					<Typography
 						variant="h1"
