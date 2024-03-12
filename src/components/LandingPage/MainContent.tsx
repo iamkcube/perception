@@ -2,9 +2,48 @@ import { useOtherContext } from "@/contexts/OtherContext";
 import CountdownTimer from "@landingpage/CountdownTimer";
 import { Box, Typography } from "@mui/material";
 import CustomButton from "@utils/CustomButton";
+import { useEffect, useRef, useState } from "react";
+
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const myText = "PERCEPTION";
+let iteration = 0;
 
 export default function MainContent() {
 	const { isBigDevice } = useOtherContext();
+	const [text, setText] = useState("PERCEPTION");
+	const h1Ref = useRef<HTMLSpanElement | null>(null);
+
+	const handleMouseOver = () => {
+		const interval = setInterval(() => {
+			setText((prevText) =>
+				prevText
+					.split("")
+					.map((_, index) => {
+						if (index < iteration) {
+							return myText[index];
+						}
+
+						return letters[Math.floor(Math.random() * 26)];
+					})
+					.join("")
+			);
+
+			if (iteration >= text.length) {
+				clearInterval(interval);
+			}
+
+			iteration += 1 / 9;
+			console.log("🚀 ~ interval ~ iteration:", iteration);
+		}, 35);
+
+		return () => {
+			clearInterval(interval);
+		};
+	};
+
+	useEffect(() => {
+		return handleMouseOver();
+	}, []);
 
 	return (
 		<>
@@ -25,10 +64,12 @@ export default function MainContent() {
 							 drop-shadow(0 0 100px var(--deep-blue))`,
 						animation:
 							"heading-animation 10s ease-in-out infinite alternate",
+						minWidth: "",
 					}}
 				>
 					<Typography
 						variant="h1"
+						ref={h1Ref}
 						align="center"
 						letterSpacing={isBigDevice ? "0.15ch" : "0.025ch"}
 						textTransform="uppercase"
@@ -40,11 +81,12 @@ export default function MainContent() {
 						color="white"
 						// fontFamily="Bebas Neue"
 						fontFamily="designsystem"
+						onMouseOver={handleMouseOver}
 						sx={{
 							pointerEvents: "none",
 						}}
 					>
-						Perception
+						{text}
 					</Typography>
 					<Typography
 						variant="h1"
