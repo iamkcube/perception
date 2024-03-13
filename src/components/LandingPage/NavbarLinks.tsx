@@ -125,13 +125,10 @@ export default function NavbarLinks({
 			</ListItem>
 			<ListItem>
 				<Link
-					to=""
+					to="./accommodation"
 					css={linkStyle}
-					onClick={() =>
-						document.getElementById("LastYear")?.scrollIntoView()
-					}
 				>
-					Last Year
+					Accommodation
 				</Link>
 			</ListItem>
 			<ListItem>

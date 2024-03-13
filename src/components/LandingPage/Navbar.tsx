@@ -23,7 +23,7 @@ export default function Navbar() {
 				position: "sticky",
 				top: 0,
 				display: "grid",
-				gridTemplateColumns: "repeat(3, auto)",
+				gridTemplateColumns: `repeat(${userLoggedIn ? 4 : 3}, auto)`,
 				gridTemplateAreas: `"left center right"`,
 				justifyContent: "space-between",
 				alignItems: "center",

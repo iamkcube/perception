@@ -6,7 +6,7 @@ import { Avatar, Box, IconButton, Typography } from "@mui/material";
 import CustomButton from "@utils/CustomButton";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function EventsPage() {
+export default function MerchPage() {
 	const { isBigDevice } = useOtherContext();
 
 	const navigate = useNavigate();
@@ -85,11 +85,14 @@ export default function EventsPage() {
 				<CustomButton
 					size="large"
 					onClick={() => {
-						navigate("");
+						window.open(
+							"https://docs.google.com/forms/d/e/1FAIpQLScJVPIJT_IbgEbR6c7Q9kk2T9oM8StcsttY4CME06E4rx1Flg/viewform",
+							"_blank"
+						);
 					}}
 					sx={{
 						justifySelf: "center",
-						boxShadow: "var(--box-shadow-blue)",
+						boxShadow: "var(--box-shadow-primary)",
 					}}
 				>
 					Buy Now!

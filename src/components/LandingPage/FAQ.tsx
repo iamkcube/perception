@@ -1,5 +1,5 @@
 import { useOtherContext } from "@/contexts/OtherContext";
-import { FAQQuesAndAns } from "@assets/ts/FAQQuesAndAns";
+import { FAQQuesAndAns } from "@assets/ts/faqQuesAndAns";
 import AddIcon from "@mui/icons-material/Add";
 import {
 	Accordion,

@@ -1,16 +1,72 @@
-import
-	{
-		Box,
-		Card,
-		CardActions,
-		CardMedia,
-		Divider,
-		Stack,
-		Typography,
-		styled,
-	} from "@mui/material";
+import { useAuth } from "@/contexts/AuthContext";
+import { useOtherContext } from "@/contexts/OtherContext";
+import { SnackbarContext } from "@/contexts/SnackbarContext";
+import { handleAddRemoveUserEvent } from "@api/dbAPI";
+import { timeFormatChanger } from "@assets/ts/timeFormatChanger";
+import {
+	Box,
+	Card,
+	CardActionArea,
+	CardMedia,
+	Divider,
+	Stack,
+	Typography,
+	styled,
+} from "@mui/material";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import CustomButton from "@utils/CustomButton";
+import { useContext } from "react";
 
-export default function EventCard() {
+interface EventCardTypes {
+	name: string;
+	club: string;
+	description: string;
+	start_time: string;
+	end_time: string;
+}
+
+export default function EventCard({
+	name,
+	club,
+	description,
+	start_time,
+	end_time,
+}: EventCardTypes) {
+	const { isSmallDevice } = useOtherContext();
+
+	const queryClient = useQueryClient();
+	const { userDoc } = useAuth();
+	const { openSnackbar } = useContext(SnackbarContext);
+
+	const {
+		mutate: mutateRegisterForEvent,
+		isPending: isLoadingRegisterForEvent,
+	} = useMutation({
+		mutationFn: async (isRegistered: boolean) => {
+			if (userDoc && userDoc?.email) {
+				await handleAddRemoveUserEvent(
+					isRegistered,
+					userDoc.email,
+					name
+				);
+
+				queryClient.invalidateQueries({ queryKey: ["eventsList"] });
+				queryClient.invalidateQueries({ queryKey: ["userDoc"] });
+
+				openSnackbar(
+					`You have successfully ${
+						isRegistered ? "deregistered" : "registered"
+					} for ${name}`
+				);
+			} else {
+				openSnackbar(`Log In first!`);
+			}
+		},
+		onError(error) {
+			console.error(error);
+		},
+	});
+
 	return (
 		<Card
 			sx={{
@@ -40,7 +96,7 @@ export default function EventCard() {
 					fontWeight: "bold",
 				}}
 			>
-				SSE DAY
+				{name.toUpperCase()}
 			</Typography>
 			<Divider
 				flexItem
@@ -55,12 +111,19 @@ export default function EventCard() {
 					direction="row"
 					justifyContent="space-between"
 				>
-					<MonoTyp>Course 1</MonoTyp>
+					<MonoTyp>{club}</MonoTyp>
 					<MonoTyp>Tech/ Innovations.</MonoTyp>
 				</Stack>
-				<CardActions
-					sx={{
-						padding: 0,
+				<CardActionArea
+					sx={CardActionAreaStyles(
+						(userDoc?.userEvents ?? []).includes(name)
+					)}
+					onClick={() => {
+						if (isSmallDevice) {
+							mutateRegisterForEvent(
+								(userDoc?.userEvents ?? []).includes(name)
+							);
+						}
 					}}
 				>
 					<CardMedia
@@ -73,7 +136,7 @@ export default function EventCard() {
 							objectFit: "cover",
 						}}
 					/>
-				</CardActions>
+				</CardActionArea>
 				<Box
 					sx={{
 						display: "flex",
@@ -102,7 +165,8 @@ export default function EventCard() {
 								fontWeight: "400",
 							}}
 						>
-							Tuesday, [02.03.2024]
+							Tuesday, {timeFormatChanger(start_time)} -{" "}
+							{timeFormatChanger(end_time)}
 						</MonoTyp>
 					</Stack>
 					<Typography
@@ -112,28 +176,46 @@ export default function EventCard() {
 							gridRow: "1 / 3",
 						}}
 					>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Itaque magnam obcaecati doloribus? Culpa commodi quidem
-						saepe repudiandae quis minima eius.
+						{description}
 					</Typography>
-					{/* <Stack
-						sx={{
-							display: "flex",
-							gap: "0.5rem",
-							["@container (max-width: 500px)"]: {
-								display: "grid",
-								gridTemplateColumns: "1fr 1fr",
-							},
-						}}
-					>
-						<CustomButton onClick={() => {}}>Register</CustomButton>
-						<CustomButton
+					{true && (
+						<Stack
+							sx={{
+								display: "flex",
+								gap: "0.5rem",
+								["@container (max-width: 500px)"]: {
+									display: "grid",
+									gridTemplateColumns: "1fr",
+								},
+							}}
+						>
+							<CustomButton
+								onClick={() => {
+									mutateRegisterForEvent(
+										(userDoc?.userEvents ?? []).includes(
+											name
+										)
+									);
+								}}
+								loading={isLoadingRegisterForEvent}
+								color={
+									(userDoc?.userEvents ?? []).includes(name)
+										? "inherit"
+										: "primary"
+								}
+							>
+								{(userDoc?.userEvents ?? []).includes(name)
+									? "Deregister"
+									: "Register"}
+							</CustomButton>
+							{/* <CustomButton
 							color="inherit"
 							onClick={() => {}}
 						>
 							Read More
-						</CustomButton>
-					</Stack> */}
+						</CustomButton> */}
+						</Stack>
+					)}
 				</Box>
 			</Stack>
 		</Card>
@@ -146,3 +228,42 @@ const MonoTyp = styled(Typography)({
 	fontSize: "clamp(1rem, 2vw + 0.5rem ,1.125rem)",
 	lineHeight: "2.5ex",
 });
+
+const CardActionAreaStyles = (isRegistered: boolean) => {
+	return {
+		padding: 0,
+		transition: "filter 250ms ease-in-out",
+		position: "relative",
+		"&:hover": {
+			// filter: "brightness(80%)",
+		},
+		"&::before": {
+			content: '""',
+			position: "absolute",
+			inset: 0,
+			backgroundColor: "transparent",
+			transition: "background-color 250ms ease-in-out",
+			zIndex: 1,
+		},
+		"&::after": {
+			content: `"Click to ${isRegistered ? "Deregister" : "Register"}"`,
+			position: "absolute",
+			top: "50%",
+			left: "50%",
+			transform: "translate(-50% , -50%)",
+			color: "var(--text-color)",
+			fontSize: "1.2rem",
+			textAlign: "center",
+			opacity: 0,
+			transition: "opacity 250ms ease-in-out",
+			zIndex: 2,
+		},
+		"&:hover:before": {
+			backgroundColor:
+				"color-mix(in lab, var(--body-color) 60%, transparent)",
+		},
+		"&:hover:after": {
+			opacity: 1,
+		},
+	};
+};

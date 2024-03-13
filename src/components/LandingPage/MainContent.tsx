@@ -34,7 +34,6 @@ export default function MainContent() {
 			}
 
 			iteration += 1 / 9;
-			console.log("🚀 ~ interval ~ iteration:", iteration);
 			if (iteration > 10) {
 				setLetterWidth("auto");
 			}

@@ -3,11 +3,16 @@
 
 :root
 {
-	--box-shadow-blue: 0px 0.7px 10.2px color-mix(in lab, var(--accent-primary) 25%, transparent),
+	--box-shadow-primary: 0px 0.7px 10.2px color-mix(in lab, var(--accent-primary) 25%, transparent),
 		0px 2.2px 25.9px color-mix(in lab, var(--accent-primary) 36%, transparent),
 		0px 5.5px 52.8px color-mix(in lab, var(--accent-primary) 44%, transparent),
 		0px 13px 108.8px color-mix(in lab, var(--accent-primary) 56%, transparent),
 		0px 32px 298px color-mix(in lab, var(--accent-primary) 9%, transparent);
+	--box-shadow-secondary: 0px 0.7px 10.2px color-mix(in lab, var(--accent-secondary) 25%, transparent),
+		0px 2.2px 25.9px color-mix(in lab, var(--accent-secondary) 36%, transparent),
+		0px 5.5px 52.8px color-mix(in lab, var(--accent-secondary) 44%, transparent),
+		0px 13px 108.8px color-mix(in lab, var(--accent-secondary) 56%, transparent),
+		0px 32px 298px color-mix(in lab, var(--accent-secondary) 9%, transparent);
 }
 
 body
