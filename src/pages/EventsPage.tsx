@@ -21,8 +21,8 @@ export default function EventsPage() {
 	// 	queryKey: ["eventsList"],
 	// });
 
-	const fancyFontStyles = {
-		// fontFamily: "var(--fancy-font)",
+	const headingFontStyles = {
+		fontFamily: "var(--monospace-font)",
 		fontSize: "clamp(2.5rem, 3vw + 1rem, 4rem)",
 		paddingInline: isBigDevice ? "0.25rem" : "0.2rem",
 		textAlign: "center",
@@ -53,7 +53,7 @@ export default function EventsPage() {
 				>
 					<ArrowBackIcon />
 				</IconButton>
-				<Typography sx={fancyFontStyles}>All Events</Typography>
+				<Typography sx={headingFontStyles}>All Events</Typography>
 				{userLoggedIn && (
 					<Link
 						to="../login"

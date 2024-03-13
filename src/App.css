@@ -1,6 +1,15 @@
 @import url('@/assets/fonts/font.css');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&display=swap');
 
+:root
+{
+	--box-shadow-blue: 0px 0.7px 10.2px color-mix(in lab, var(--accent-primary) 25%, transparent),
+		0px 2.2px 25.9px color-mix(in lab, var(--accent-primary) 36%, transparent),
+		0px 5.5px 52.8px color-mix(in lab, var(--accent-primary) 44%, transparent),
+		0px 13px 108.8px color-mix(in lab, var(--accent-primary) 56%, transparent),
+		0px 32px 298px color-mix(in lab, var(--accent-primary) 9%, transparent);
+}
+
 body
 {
 	scrollbar-gutter: stable;
@@ -92,4 +101,44 @@ img[data-visible="active"]
 img[data-visible="inactive"]
 {
 	display: none;
+}
+
+@keyframes animation1
+{
+
+	10%,
+	90%
+	{
+		transform: rotateY(0deg);
+		z-index: 2;
+	}
+
+	40%,
+	60%
+	{
+
+		transform: rotateY(180deg);
+		z-index: 1;
+	}
+
+}
+
+@keyframes animation2
+{
+
+	10%,
+	90%
+	{
+		transform: rotateY(180deg);
+		z-index: 1;
+	}
+
+	40%,
+	60%
+	{
+
+		transform: rotateY(0deg);
+		z-index: 2;
+	}
+
 }

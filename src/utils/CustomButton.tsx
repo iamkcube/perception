@@ -4,6 +4,7 @@ type RoundedButtonProps = {
 	children: React.ReactNode;
 	type?: "reset" | "button" | "submit" | undefined;
 	loading?: boolean;
+	size?: "small" | "medium" | "large";
 	borderWidth?: number;
 	color?:
 		| "primary"
@@ -22,6 +23,7 @@ type RoundedButtonProps = {
 export default function CustomButton({
 	children,
 	type,
+	size,
 	loading,
 	borderWidth = 2,
 	color = "primary",
@@ -31,6 +33,7 @@ export default function CustomButton({
 }: RoundedButtonProps) {
 	return (
 		<LoadingButton
+			size={size}
 			type={type}
 			disableElevation
 			loading={loading}
