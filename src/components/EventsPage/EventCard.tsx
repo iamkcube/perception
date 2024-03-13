@@ -119,11 +119,11 @@ export default function EventCard({
 						(userDoc?.userEvents ?? []).includes(name)
 					)}
 					onClick={() => {
-						if (isSmallDevice) {
-							mutateRegisterForEvent(
-								(userDoc?.userEvents ?? []).includes(name)
-							);
-						}
+						if (isSmallDevice) return;
+
+						mutateRegisterForEvent(
+							(userDoc?.userEvents ?? []).includes(name)
+						);
 					}}
 				>
 					<CardMedia

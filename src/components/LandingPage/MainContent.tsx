@@ -3,6 +3,7 @@ import CountdownTimer from "@landingpage/CountdownTimer";
 import { Box, Typography } from "@mui/material";
 import CustomButton from "@utils/CustomButton";
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const myText = "PERCEPTION";
@@ -10,6 +11,7 @@ let iteration = 0;
 
 export default function MainContent() {
 	const { isBigDevice } = useOtherContext();
+	const navigate = useNavigate();
 	const [text, setText] = useState("PERCEPTION");
 	const [letterWidth, setLetterWidth] = useState<"1.1ch" | "auto">("1.1ch");
 	const h1Ref = useRef<HTMLSpanElement | null>(null);
@@ -114,7 +116,9 @@ export default function MainContent() {
 						<CountdownTimer date="2024-03-19" /> left
 					</Typography>
 					<CustomButton
-						onClick={() => {}}
+						onClick={() => {
+							navigate("./events");
+						}}
 						variant="outlined"
 						color="secondary"
 						sx={{
