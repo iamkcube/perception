@@ -9,7 +9,8 @@
     "deploy": "firebase deploy --only hosting",
     "bd": "tsc && vite build && firebase deploy --only hosting",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "cicd": "git add . && git commit -m $1 && git push && git checkout master && git merge develop && git push && git checkout develop"
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",
