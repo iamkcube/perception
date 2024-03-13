@@ -1,13 +1,14 @@
-import {
-	Box,
-	Card,
-	CardMedia,
-	Divider,
-	Stack,
-	Typography,
-	styled,
-} from "@mui/material";
-import CustomButton from "@utils/CustomButton";
+import
+	{
+		Box,
+		Card,
+		CardActions,
+		CardMedia,
+		Divider,
+		Stack,
+		Typography,
+		styled,
+	} from "@mui/material";
 
 export default function EventCard() {
 	return (
@@ -57,16 +58,22 @@ export default function EventCard() {
 					<MonoTyp>Course 1</MonoTyp>
 					<MonoTyp>Tech/ Innovations.</MonoTyp>
 				</Stack>
-				<CardMedia
-					component="img"
-					src="https://unsplash.it/1080/720"
-					alt="Event Image"
+				<CardActions
 					sx={{
-						width: "100%",
-						aspectRatio: "16/9",
-						objectFit: "cover",
+						padding: 0,
 					}}
-				/>
+				>
+					<CardMedia
+						component="img"
+						src="https://unsplash.it/1080/720"
+						alt="Event Image"
+						sx={{
+							width: "100%",
+							aspectRatio: "16/9",
+							objectFit: "cover",
+						}}
+					/>
+				</CardActions>
 				<Box
 					sx={{
 						display: "flex",
@@ -109,7 +116,7 @@ export default function EventCard() {
 						Itaque magnam obcaecati doloribus? Culpa commodi quidem
 						saepe repudiandae quis minima eius.
 					</Typography>
-					<Stack
+					{/* <Stack
 						sx={{
 							display: "flex",
 							gap: "0.5rem",
@@ -126,7 +133,7 @@ export default function EventCard() {
 						>
 							Read More
 						</CustomButton>
-					</Stack>
+					</Stack> */}
 				</Box>
 			</Stack>
 		</Card>

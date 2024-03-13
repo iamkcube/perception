@@ -2,14 +2,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { useOtherContext } from "@/contexts/OtherContext";
 import EventCard from "@eventspage/EventCard";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import
-	{
-		Avatar,
-		Box,
-		IconButton,
-		Stack,
-		Typography
-	} from "@mui/material";
+import { Avatar, Box, IconButton, Stack, Typography } from "@mui/material";
 import CustomChip from "@utils/CustomChip";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -42,13 +35,13 @@ export default function EventsPage() {
 			}
 			marginInline={isBigDevice ? "auto" : "auto"}
 			marginBlock="4rem"
-			>
+		>
 			<Box
 				sx={{
 					display: "grid",
 					gridTemplateColumns: "1fr auto 1fr",
 					justifyContent: "center",
-					marginBlock:"2rem"
+					marginBlock: "2rem",
 				}}
 			>
 				<IconButton
@@ -92,8 +85,13 @@ export default function EventsPage() {
 							"repeat(auto-fit, minmax(9ch, 1fr))",
 						alignItems: isBigDevice ? "center" : "flex-start",
 						gap: "0.5rem",
+						width: "100%",
 					}}
 				>
+					<CustomChip
+						label="Central"
+						onClick={() => {}}
+					/>
 					<CustomChip
 						label="Zairza"
 						onClick={() => {}}

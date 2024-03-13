@@ -1,9 +1,8 @@
 @font-face
 {
     font-family: 'designsystem';
-    src: url('design_system_d_w01_900r-webfont.ttf') format('ttf'), 
-        url('design_system_d_w01_900r-webfont.woff2') format('woff2'),
-        url('design_system_d_w01_900r-webfont.woff') format('woff');
+    src: url('/design_system_d_w01_900r-webfont.woff2') format('woff2'),
+        url('/design_system_d_w01_900r-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }

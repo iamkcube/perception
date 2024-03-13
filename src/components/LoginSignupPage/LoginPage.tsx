@@ -54,7 +54,7 @@ export default function LoginPage({
 				spacing={1}
 			>
 				<Typography
-					fontFamily="var(--fancy-font)"
+					fontFamily="var(--monospace-font)"
 					fontSize="2rem"
 					paddingInlineEnd={1}
 				>

@@ -1,6 +1,9 @@
+import { Box, Typography } from "@mui/material";
 
 export default function MerchPage() {
   return (
-	<div>MerchPage</div>
+	<Box>
+    <Typography variant="h1">Perception Merchandise</Typography>
+  </Box>
   )
 }

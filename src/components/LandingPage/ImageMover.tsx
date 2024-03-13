@@ -37,7 +37,8 @@ export default function ImageMover() {
 				.getBoundingClientRect().y
 		}px`;
 		image.style.zIndex = `${globalIndex}`;
-		image.style.display = "block";
+		// image.style.display = "block";
+		image.setAttribute("data-visible", "active");
 
 		setLast({ x, y });
 	};
@@ -58,7 +59,8 @@ export default function ImageMover() {
 
 			activate(lead, e.clientX, e.clientY);
 
-			if (tail) tail.style.display = "none";
+			// if (tail) tail.style.display = "none";
+			if (tail) tail.setAttribute("data-visible", "inactive");
 
 			setGlobalIndex(globalIndex + 1);
 		}
@@ -77,7 +79,8 @@ export default function ImageMover() {
 
 			activate(lead, touch.clientX, touch.clientY);
 
-			if (tail) tail.style.display = "none";
+			// if (tail) tail.style.display = "none";
+			if (tail) tail.setAttribute("data-visible", "inactive");
 
 			setGlobalIndex(globalIndex + 1);
 		}
@@ -101,9 +104,11 @@ export default function ImageMover() {
 							? "translate(-50%, -50%)"
 							: "auto",
 						pointerEvents: "none",
+						animation: "fade-in-full 100ms forwards",
 					}}
 					loading="lazy"
 					data-index={index}
+					data-visible="inactive"
 					src={src}
 				/>
 			))}

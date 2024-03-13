@@ -12,12 +12,12 @@ import {
 } from "@api/authAPI";
 import LoginPage from "@loginsignuppage/LoginPage";
 import SignupPage from "@loginsignuppage/SignupPage";
-import { Box, Button, Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
+import Spline from "@splinetool/react-spline";
 import { useMutation } from "@tanstack/react-query";
 import CustomButton from "@utils/CustomButton";
 import { useContext, useEffect, useRef } from "react";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
-import Spline from "@splinetool/react-spline";
 
 export default function LoginSignupPage() {
 	const { isBigDevice } = useOtherContext();
@@ -156,49 +156,53 @@ export default function LoginSignupPage() {
 				scene="https://prod.spline.design/hHFaVj0jlUF058eO/scene.splinecode"
 				style={{
 					position: "absolute",
-					opacity: 0.25,
+					opacity: 0,
+					// opacity: 0.4,
+					animation: "fade-in 3s ease-in 2s forwards"
 				}}
+				onScroll={() => {}}
 			/>
 			<Stack
 				justifyContent="space-between"
 				alignItems="center"
 				direction={isBigDevice ? "row" : "column"}
-				marginBlockEnd={isBigDevice ? 0 : "1rem"}
+				marginBlockEnd={isBigDevice ? "2rem" : "1rem"}
 			>
-				<Box marginBlockStart="1.5em">
-					<CustomButton onClick={() => navigate("../")}>
+				<Box>
+					<CustomButton
+						variant="text"
+						sx={{ color: "var(--accent-secondary)" }}
+						onClick={() => navigate("../")}
+					>
 						Back to Home
 					</CustomButton>
 				</Box>
-				{
-					<Box marginBlockStart="1.5em">
-						<Button
-							sx={{
-								textTransform: "none",
-							}}
-							onClick={() =>
-								navigate(
-									`../${
-										location.pathname === "/login"
-											? "signup"
-											: "login"
-									}`,
-									{
-										state: {
-											email: emailRef?.current?.value,
-											password:
-												passwordRef?.current?.value,
-										},
-									}
-								)
-							}
-						>
-							{location.pathname === "/login"
-								? "Sign Up Here"
-								: "Log In Here"}
-						</Button>
-					</Box>
-				}
+
+				<Box>
+					<CustomButton
+						variant="text"
+						sx={{ color: "var(--accent-secondary)" }}
+						onClick={() =>
+							navigate(
+								`../${
+									location.pathname === "/login"
+										? "signup"
+										: "login"
+								}`,
+								{
+									state: {
+										email: emailRef?.current?.value,
+										password: passwordRef?.current?.value,
+									},
+								}
+							)
+						}
+					>
+						{location.pathname === "/login"
+							? "Sign Up Here"
+							: "Log In Here"}
+					</CustomButton>
+				</Box>
 			</Stack>
 
 			<Box

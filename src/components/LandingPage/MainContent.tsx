@@ -38,7 +38,7 @@ export default function MainContent() {
 			if (iteration > 10) {
 				setLetterWidth("auto");
 			}
-		}, 35);
+		}, 32);
 
 		return () => {
 			clearInterval(interval);
