@@ -5,6 +5,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import { useOtherContext } from "@/contexts/OtherContext";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
 	const { isBigDevice } = useOtherContext();
@@ -19,9 +20,15 @@ export default function Footer() {
 			marginInline="auto"
 			marginBlock="2rem 1rem"
 		>
-			<Typography color="var(--accent-blue)">
+			<Link
+				to="./termsandconditions"
+				style={{
+					textDecoration: "none",
+					color: "var(--accent-primary)",
+				}}
+			>
 				&copy; All Rights Reserved
-			</Typography>
+			</Link>
 			<Stack
 				alignItems="center"
 				spacing={0.25}

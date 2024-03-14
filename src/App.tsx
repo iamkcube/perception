@@ -10,6 +10,7 @@ import ScrollToTop from "@utils/ScrollToTop";
 import OtherContextProvider from "@/contexts/OtherContext";
 import AccommodationPage from "@pages/AccommodationPage";
 import MerchPage from "@pages/MerchPage";
+import TermsAndConditionsPage from "@pages/TermsAndConditionsPage";
 
 const theme = createTheme({
 	palette: {
@@ -64,6 +65,10 @@ function App() {
 								<Route
 									path="/accommodation"
 									element={<AccommodationPage />}
+								/>
+								<Route
+									path="/termsandconditions"
+									element={<TermsAndConditionsPage />}
 								/>
 								<Route
 									path="/"
