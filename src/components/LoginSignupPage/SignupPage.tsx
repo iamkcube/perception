@@ -63,7 +63,7 @@ export default function SignupPage({
 		<form
 			style={{
 				marginInline: isBigDevice ? "auto" : "2rem",
-				width: isBigDevice ? "40ch" : "auto",
+				width: isBigDevice ? "40ch" : "90vw",
 				display: "grid",
 				placeItems: "center",
 				gap: "1rem",

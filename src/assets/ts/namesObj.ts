@@ -11,7 +11,7 @@ export const namesObj = [
 	},
 	{
 		name: "Ankita Sahu",
-		imageUrl: "https://i.postimg.cc/3JXvycrN/ankita.webp",
+		imageUrl: "https://i.postimg.cc/QC6Dy7cR/ankita.webp",
 		socialLink: "https://www.instagram.com/ankita_sahu__29",
 	},
 	{
