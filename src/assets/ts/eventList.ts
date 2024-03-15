@@ -111,6 +111,15 @@ export const eventList = {
 			// 	registration_link: "",
 			// },
 			{
+				name: "Tech Venture",
+				club: "Spectrum",
+				description:
+					"An exhilarating convergence of innovation, technology, and networking opportunities for tech enthusiasts worldwide.",
+				start_time: "1100",
+				end_time: "1700",
+				registration_link: "",
+			},
+			{
 				name: "Hunt",
 				club: "Biozo",
 				description:
@@ -215,6 +224,24 @@ export const eventList = {
 			// 	registration_link: "",
 			// },
 			{
+				name: "Tech Venture",
+				club: "Spectrum",
+				description:
+					"An exhilarating convergence of innovation, technology, and networking opportunities for tech enthusiasts worldwide.",
+				start_time: "1000",
+				end_time: "1700",
+				registration_link: "",
+			},
+			{
+				name: "GDSC",
+				club: "GDSC x Spectrum Hackathon",
+				description:
+					"Unleash your creativity and coding skills at this collaborative event, where innovation meets technology to solve real-world problems.",
+				start_time: "1000",
+				end_time: "1800",
+				registration_link: "",
+			},
+			{
 				name: "Quiz",
 				club: "Biozo",
 				description:
@@ -238,7 +265,7 @@ export const eventList = {
 		date: "2024-03-17",
 		events: [
 			{
-				name: "Soccor",
+				name: "Soccer",
 				club: "Central",
 				description:
 					"Lively event where robots showcase their football skills in a series of matches.",
@@ -256,7 +283,7 @@ export const eventList = {
 			// 	registration_link: "",
 			// },
 			{
-				name: "Pictonary",
+				name: "Pictionary",
 				club: "Biozo",
 				description:
 					"Fun-filled game where participants sketch and guess words, enhancing creativity and teamwork.",
@@ -273,6 +300,15 @@ export const eventList = {
 			// 	end_time: "1230",
 			// 	registration_link: "",
 			// },
+			{
+				name: "Tech Venture",
+				club: "Spectrum",
+				description:
+					"An exhilarating convergence of innovation, technology, and networking opportunities for tech enthusiasts worldwide.",
+				start_time: "1000",
+				end_time: "1700",
+				registration_link: "",
+			},
 		],
 	},
 };
