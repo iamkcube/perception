@@ -1,17 +1,16 @@
 import { useOtherContext } from "@/contexts/OtherContext";
 import { SnackbarContext } from "@/contexts/SnackbarContext";
 import { timeFormatChanger } from "@assets/ts/timeFormatChanger";
-import
-	{
-		Box,
-		Card,
-		CardActionArea,
-		CardMedia,
-		Divider,
-		Stack,
-		Typography,
-		styled,
-	} from "@mui/material";
+import {
+	Box,
+	Card,
+	CardActionArea,
+	CardMedia,
+	Divider,
+	Stack,
+	Typography,
+	styled,
+} from "@mui/material";
 import { useMutation } from "@tanstack/react-query";
 import CustomButton from "@utils/CustomButton";
 import { useContext } from "react";
@@ -134,7 +133,7 @@ export default function EventCard({
 				>
 					<CardMedia
 						component="img"
-						src="https://unsplash.it/1080/720"
+						src={`https://source.unsplash.com/1080x720?${name},tech`}
 						alt="Event Image"
 						sx={{
 							width: "100%",
