@@ -1,19 +1,18 @@
-import { useAuth } from "@/contexts/AuthContext";
 import { useOtherContext } from "@/contexts/OtherContext";
 import { SnackbarContext } from "@/contexts/SnackbarContext";
-import { handleAddRemoveUserEvent } from "@api/dbAPI";
 import { timeFormatChanger } from "@assets/ts/timeFormatChanger";
-import {
-	Box,
-	Card,
-	CardActionArea,
-	CardMedia,
-	Divider,
-	Stack,
-	Typography,
-	styled,
-} from "@mui/material";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import
+	{
+		Box,
+		Card,
+		CardActionArea,
+		CardMedia,
+		Divider,
+		Stack,
+		Typography,
+		styled,
+	} from "@mui/material";
+import { useMutation } from "@tanstack/react-query";
 import CustomButton from "@utils/CustomButton";
 import { useContext } from "react";
 
@@ -23,6 +22,7 @@ interface EventCardTypes {
 	description: string;
 	start_time: string;
 	end_time: string;
+	registration_link?: string;
 }
 
 export default function EventCard({
@@ -31,37 +31,43 @@ export default function EventCard({
 	description,
 	start_time,
 	end_time,
+	registration_link,
 }: EventCardTypes) {
 	const { isSmallDevice } = useOtherContext();
 
-	const queryClient = useQueryClient();
-	const { userDoc } = useAuth();
+	// const queryClient = useQueryClient();
+	// const { userDoc } = useAuth();
 	const { openSnackbar } = useContext(SnackbarContext);
 
 	const {
 		mutate: mutateRegisterForEvent,
 		isPending: isLoadingRegisterForEvent,
 	} = useMutation({
-		mutationFn: async (isRegistered: boolean) => {
-			if (userDoc && userDoc?.email) {
-				await handleAddRemoveUserEvent(
-					isRegistered,
-					userDoc.email,
-					name
-				);
-
-				queryClient.invalidateQueries({ queryKey: ["eventsList"] });
-				queryClient.invalidateQueries({ queryKey: ["userDoc"] });
-
-				openSnackbar(
-					`You have successfully ${
-						isRegistered ? "deregistered" : "registered"
-					} for ${name}`
-				);
-			} else {
-				openSnackbar(`Log In first!`);
-			}
-		},
+		mutationFn: async () =>
+			// isRegistered: boolean
+			{
+				if (registration_link == "") {
+					openSnackbar("Register at event desk!");
+				} else {
+					window.open(registration_link, "_blank");
+				}
+				// if (userDoc && userDoc?.email) {
+				// 	await handleAddRemoveUserEvent(
+				// 		isRegistered,
+				// 		userDoc.email,
+				// 		name
+				// 	);
+				// 	queryClient.invalidateQueries({ queryKey: ["eventsList"] });
+				// 	queryClient.invalidateQueries({ queryKey: ["userDoc"] });
+				// 	openSnackbar(
+				// 		`You have successfully ${
+				// 			isRegistered ? "deregistered" : "registered"
+				// 		} for ${name}`
+				// 	);
+				// } else {
+				// 	openSnackbar(`Log In first!`);
+				// }
+			},
 		onError(error) {
 			console.error(error);
 		},
@@ -116,14 +122,14 @@ export default function EventCard({
 				</Stack>
 				<CardActionArea
 					sx={CardActionAreaStyles(
-						(userDoc?.userEvents ?? []).includes(name)
+						registration_link == ""
+						// (userDoc?.userEvents ?? []).includes(name)
 					)}
 					onClick={() => {
 						if (isSmallDevice) return;
 
-						mutateRegisterForEvent(
-							(userDoc?.userEvents ?? []).includes(name)
-						);
+						mutateRegisterForEvent();
+						// (userDoc?.userEvents ?? []).includes(name)
 					}}
 				>
 					<CardMedia
@@ -191,21 +197,18 @@ export default function EventCard({
 						>
 							<CustomButton
 								onClick={() => {
-									mutateRegisterForEvent(
-										(userDoc?.userEvents ?? []).includes(
-											name
-										)
-									);
+									mutateRegisterForEvent();
+									// (userDoc?.userEvents ?? []).includes(name)
 								}}
 								loading={isLoadingRegisterForEvent}
 								color={
-									(userDoc?.userEvents ?? []).includes(name)
+									registration_link == ""
 										? "inherit"
 										: "primary"
 								}
 							>
-								{(userDoc?.userEvents ?? []).includes(name)
-									? "Deregister"
+								{registration_link == ""
+									? "On Site Registration"
 									: "Register"}
 							</CustomButton>
 							{/* <CustomButton
@@ -229,7 +232,7 @@ const MonoTyp = styled(Typography)({
 	lineHeight: "2.5ex",
 });
 
-const CardActionAreaStyles = (isRegistered: boolean) => {
+const CardActionAreaStyles = (no_registration_link: boolean) => {
 	return {
 		padding: 0,
 		transition: "filter 250ms ease-in-out",
@@ -246,7 +249,9 @@ const CardActionAreaStyles = (isRegistered: boolean) => {
 			zIndex: 1,
 		},
 		"&::after": {
-			content: `"Click to ${isRegistered ? "Deregister" : "Register"}"`,
+			content: no_registration_link
+				? `"On Site Registration"`
+				: `"Click to Register"`,
 			position: "absolute",
 			top: "50%",
 			left: "50%",

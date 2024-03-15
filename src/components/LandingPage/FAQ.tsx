@@ -1,15 +1,15 @@
 import { useOtherContext } from "@/contexts/OtherContext";
 import { FAQQuesAndAns } from "@assets/ts/faqQuesAndAns";
 import AddIcon from "@mui/icons-material/Add";
-import {
-	Accordion,
-	AccordionDetails,
-	AccordionSummary,
-	Box,
-	Stack,
-	Typography,
-} from "@mui/material";
-import CustomButton from "@utils/CustomButton";
+import
+	{
+		Accordion,
+		AccordionDetails,
+		AccordionSummary,
+		Box,
+		Stack,
+		Typography,
+	} from "@mui/material";
 
 export default function FAQ() {
 	const { isBigDevice } = useOtherContext();
@@ -69,7 +69,7 @@ export default function FAQ() {
 						</Accordion>
 					))}
 				</Stack>
-				<CustomButton
+				{/* <CustomButton
 					color="inherit"
 					sx={{
 						alignSelf: "flex-start",
@@ -77,7 +77,7 @@ export default function FAQ() {
 					onClick={() => {}}
 				>
 					See More
-				</CustomButton>
+				</CustomButton> */}
 			</Stack>
 		</Box>
 	);

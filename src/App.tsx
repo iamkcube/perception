@@ -1,16 +1,15 @@
 import { AuthProvider } from "@/contexts/AuthContext";
+import OtherContextProvider from "@/contexts/OtherContext";
 import SnackbarProvider from "@/contexts/SnackbarContext/SnackbarProvider";
+import { ThemeProvider, createTheme } from "@mui/material";
 import EventsPage from "@pages/EventsPage";
 import LandingPage from "@pages/LandingPage";
 import LoginSignupPage from "@pages/LoginSignupPage";
-import { ThemeProvider, createTheme } from "@mui/material";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
-import ScrollToTop from "@utils/ScrollToTop";
-import OtherContextProvider from "@/contexts/OtherContext";
-import AccommodationPage from "@pages/AccommodationPage";
 import MerchPage from "@pages/MerchPage";
 import TermsAndConditionsPage from "@pages/TermsAndConditionsPage";
+import ScrollToTop from "@utils/ScrollToTop";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
 
 const theme = createTheme({
 	palette: {
@@ -62,10 +61,10 @@ function App() {
 									path="/merch"
 									element={<MerchPage />}
 								/>
-								<Route
+								{/* <Route
 									path="/accommodation"
 									element={<AccommodationPage />}
-								/>
+								/> */}
 								<Route
 									path="/termsandconditions"
 									element={<TermsAndConditionsPage />}

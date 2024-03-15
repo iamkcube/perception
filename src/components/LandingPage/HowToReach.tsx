@@ -1,8 +1,11 @@
 import { useOtherContext } from "@/contexts/OtherContext";
 import { Box, Stack, Typography } from "@mui/material";
+import CustomButton from "@utils/CustomButton";
+import { useNavigate } from "react-router-dom";
 
 export default function HowToReach() {
 	const { isBigDevice } = useOtherContext();
+	const navigate = useNavigate();
 
 	return (
 		<Box
@@ -58,6 +61,17 @@ export default function HowToReach() {
 					</Typography>{" "}
 					<Typography>Phone: 0674-2386075</Typography>
 				</Stack>
+				<CustomButton
+					// color="inherit"
+					sx={{
+						alignSelf: "flex-start",
+					}}
+					onClick={() => {
+						navigate("./events");
+					}}
+				>
+					Register
+				</CustomButton>
 			</Stack>
 			<iframe
 				src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14970.358729897278!2d85.776639!3d20.275845!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19a7f9d486f7c3%3A0xde71ead59307dcca!2sOdisha%20University%20of%20Technology%20and%20Research!5e0!3m2!1sen!2sin!4v1709994524634!5m2!1sen!2sin"

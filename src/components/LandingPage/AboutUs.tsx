@@ -1,6 +1,7 @@
 import { useOtherContext } from "@/contexts/OtherContext";
 import { Box, Stack, Typography } from "@mui/material";
 import CustomButton from "@utils/CustomButton";
+import aboutUsPic from "@assets/images/about_us.webp";
 
 export default function AboutUs() {
 	const { isBigDevice } = useOtherContext();
@@ -44,7 +45,7 @@ export default function AboutUs() {
 			</h1>
 			<Stack spacing="1rem">
 				<img
-					src="https://source.unsplash.com/1080x720/?techfest"
+					src={aboutUsPic}
 					width={1080}
 					height={720}
 					loading="lazy"
@@ -75,7 +76,7 @@ export default function AboutUs() {
 					sx={{
 						alignSelf: "flex-start",
 					}}
-					onClick={() => {}}
+					onClick={() => {document.getElementById("MeetOurTeam")?.scrollIntoView()}}
 				>
 					Read More
 				</CustomButton>

@@ -123,14 +123,14 @@ export default function NavbarLinks({
 					How To Reach
 				</Link>
 			</ListItem>
-			<ListItem>
+			{/* <ListItem>
 				<Link
 					to="./accommodation"
 					css={linkStyle}
 				>
 					Accommodation
 				</Link>
-			</ListItem>
+			</ListItem> */}
 			<ListItem>
 				<Link
 					to="./merch"

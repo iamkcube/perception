@@ -16,6 +16,7 @@ export default function MeetOurTeam() {
 
 	return (
 		<Box
+			id="MeetOurTeam"
 			style={{
 				position: "relative",
 				display: "grid",

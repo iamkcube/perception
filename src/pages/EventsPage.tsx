@@ -177,7 +177,7 @@ export default function EventsPage() {
 									gap: "1rem",
 									marginBlockStart: "1.69rem",
 									"& > *:only-child": {
-										maxWidth: "max(50%, 24rem)",
+										maxWidth: "max(33%, 24rem)",
 									},
 									"& > *": {
 										display: "flex",
@@ -190,6 +190,7 @@ export default function EventsPage() {
 										(a, b) => +a.start_time - +b.start_time
 									)
 									?.map((values, index) => {
+										console.log("🚀 ~ Object.keys ~ values:", values)
 										return (
 											<EventCard
 												key={index}
