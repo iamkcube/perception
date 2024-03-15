@@ -8,6 +8,11 @@
 		0px 5.5px 52.8px color-mix(in lab, var(--accent-primary) 44%, transparent),
 		0px 13px 108.8px color-mix(in lab, var(--accent-primary) 56%, transparent),
 		0px 32px 298px color-mix(in lab, var(--accent-primary) 9%, transparent);
+	--box-shadow-primary-2: 0px 0.7px 20.2px color-mix(in lab, var(--accent-primary) 55%, transparent),
+		0px 2.2px 35.9px color-mix(in lab, var(--accent-primary) 56%, transparent),
+		0px 5.5px 62.8px color-mix(in lab, var(--accent-primary) 94%, transparent),
+		0px 13px 158.8px color-mix(in lab, var(--accent-primary) 86%, transparent),
+		0px 32px 398px color-mix(in lab, var(--accent-primary) 39%, transparent);
 	--box-shadow-secondary: 0px 0.7px 10.2px color-mix(in lab, var(--accent-secondary) 25%, transparent),
 		0px 2.2px 25.9px color-mix(in lab, var(--accent-secondary) 36%, transparent),
 		0px 5.5px 52.8px color-mix(in lab, var(--accent-secondary) 44%, transparent),
@@ -146,4 +151,12 @@ img[data-visible="inactive"]
 		z-index: 2;
 	}
 
+}
+
+@keyframes inc-box-shadow
+{
+	50%
+	{
+		box-shadow: 0px 2.7px 52px var(--accent-primary);
+	}
 }

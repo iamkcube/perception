@@ -21,6 +21,23 @@ export default function LastYear() {
 		>
 			<Typography
 				sx={{
+					position: "absolute",
+					top: "50%",
+					left: "50%",
+					transform: "translate(-50% , -50%)",
+					bgcolor: "transparent",
+					padding: "0.75ch 1.25ch",
+					borderRadius: "100vmax",
+					// boxShadow: "var(--box-shadow-primary)",
+					// filter: "drop-shadow(0px 0.7px 100px color-mix(in lab, var(--accent-primary) 100%, transparent))",
+					animation:
+						"inc-box-shadow 3s ease-in-out infinite alternate",
+				}}
+			>
+				{isBigDevice ? "Hover" : "Touch"} to reveal!
+			</Typography>
+			<Typography
+				sx={{
 					fontFamily: "var(--monospace-font)",
 					fontWeight: "500",
 				}}

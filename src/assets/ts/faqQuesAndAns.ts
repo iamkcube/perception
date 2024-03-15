@@ -48,6 +48,6 @@ export const FAQQuesAndAns = [
 	{
 		question:
 			"Will there be prizes for winners of the tech fest competitions?",
-		answer: "Yes, there will be prizes and awards for winners of various competitions and challenges held during the tech fest.",
+		answer: "Yes, there will be prizes and goodies for winners of various competitions and challenges held during the tech fest.",
 	},
 ];
