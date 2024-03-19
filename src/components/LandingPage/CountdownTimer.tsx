@@ -59,7 +59,9 @@ export default function CountdownTimer({ date }: { date: string }) {
 	return (
 		<>
 			{timerComponents.length ? (
-				timerComponents
+				<>
+					{timerComponents} <span>left</span>
+				</>
 			) : (
 				<span>The Event is ON!</span>
 			)}
