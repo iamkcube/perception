@@ -99,6 +99,7 @@ export default function EventCard({
 					textAlign: "right",
 					fontSize: "clamp(2rem, 3vw + 1rem ,4rem)",
 					fontWeight: "bold",
+					lineHeight: 1,
 				}}
 			>
 				{name.toUpperCase()}

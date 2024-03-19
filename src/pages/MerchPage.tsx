@@ -35,6 +35,7 @@ export default function MerchPage() {
 			}
 			marginInline={isBigDevice ? "auto" : "auto"}
 			marginBlock="4rem"
+			paddingBlockEnd="4rem"
 		>
 			<Box
 				sx={{
