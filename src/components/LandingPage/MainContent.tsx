@@ -113,7 +113,7 @@ export default function MainContent() {
 						fontFamily="var(--monospace-font)"
 						color="var(--accent-white)"
 					>
-						<CountdownTimer date="2024-03-19" /> left
+						<CountdownTimer date="2024-03-20" />
 					</Typography>
 					<CustomButton
 						onClick={() => {
