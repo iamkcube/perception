@@ -7,13 +7,17 @@ import {
 	CardActionArea,
 	CardMedia,
 	Divider,
+	IconButton,
 	Stack,
+	Tooltip,
 	Typography,
 	styled,
 } from "@mui/material";
 import { useMutation } from "@tanstack/react-query";
 import CustomButton from "@utils/CustomButton";
 import { useContext } from "react";
+import PhoneMissedIcon from "@mui/icons-material/PhoneMissed";
+import PhoneIcon from "@mui/icons-material/Phone";
 
 interface EventCardTypes {
 	name: string;
@@ -22,6 +26,7 @@ interface EventCardTypes {
 	start_time: string;
 	end_time: string;
 	registration_link?: string;
+	contact?: string[];
 }
 
 export default function EventCard({
@@ -31,6 +36,7 @@ export default function EventCard({
 	start_time,
 	end_time,
 	registration_link,
+	contact,
 }: EventCardTypes) {
 	const { isSmallDevice } = useOtherContext();
 
@@ -97,7 +103,8 @@ export default function EventCard({
 				sx={{
 					color: "var(--text-color-dark)",
 					textAlign: "right",
-					fontSize: "clamp(2rem, 3vw + 1rem ,4rem)",
+					fontSize: "clamp(2rem, 3vw + 1rem ,2.5rem)",
+					marginBlock: "0.25rem",
 					fontWeight: "bold",
 					lineHeight: 1,
 				}}
@@ -195,22 +202,50 @@ export default function EventCard({
 								},
 							}}
 						>
-							<CustomButton
-								onClick={() => {
-									mutateRegisterForEvent();
-									// (userDoc?.userEvents ?? []).includes(name)
-								}}
-								loading={isLoadingRegisterForEvent}
-								color={
-									registration_link == ""
-										? "inherit"
-										: "primary"
-								}
+							<Stack
+								direction="row"
+								spacing="0.5rem"
 							>
-								{registration_link == ""
-									? "On Site Registration"
-									: "Register"}
-							</CustomButton>
+								<CustomButton
+									onClick={() => {
+										mutateRegisterForEvent();
+										// (userDoc?.userEvents ?? []).includes(name)
+									}}
+									loading={isLoadingRegisterForEvent}
+									color={
+										registration_link == ""
+											? "inherit"
+											: "primary"
+									}
+									sx={{
+										width: "100%",
+									}}
+								>
+									{registration_link == ""
+										? "On Site Registration"
+										: "Register"}
+								</CustomButton>
+								{!contact && (
+									<>
+										<Tooltip
+											title="name"
+											arrow
+										>
+											<IconButton color="inherit">
+												<PhoneIcon />
+											</IconButton>
+										</Tooltip>
+										<Tooltip
+											title=""
+											arrow
+										>
+											<IconButton color="inherit">
+												<PhoneMissedIcon />
+											</IconButton>
+										</Tooltip>
+									</>
+								)}
+							</Stack>
 							{/* <CustomButton
 							color="inherit"
 							onClick={() => {}}

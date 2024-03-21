@@ -1,6 +1,6 @@
 export const eventList = {
 	day1: {
-		date: "2024-03-18",
+		date: "2024-03-20",
 		events: [
 			{
 				name: "Sumo",
@@ -9,7 +9,7 @@ export const eventList = {
 					"A competitive event where robots battle head-to-head to push each other out of a ring.",
 				start_time: "1430",
 				end_time: "1750",
-				registration_link: "https://forms.gle/Yy1VNHxSZGUQhHbF6",
+				registration_link: "",
 			},
 			{
 				name: "Race",
@@ -18,7 +18,7 @@ export const eventList = {
 					"A thrilling competition where participants race their robots to the finish line.",
 				start_time: "1130",
 				end_time: "1430",
-				registration_link: "https://forms.gle/Yy1VNHxSZGUQhHbF6",
+				registration_link: "",
 			},
 			{
 				name: "Tiny Hoop",
@@ -27,7 +27,7 @@ export const eventList = {
 					"An exciting challenge where robots showcase their agility by shooting hoops into small targets.",
 				start_time: "1000",
 				end_time: "1800",
-				registration_link: "https://forms.gle/Yy1VNHxSZGUQhHbF6",
+				registration_link: "",
 			},
 			{
 				name: "Line",
@@ -36,7 +36,7 @@ export const eventList = {
 					"A technical event where robots navigate through a maze following a predetermined line.",
 				start_time: "1000",
 				end_time: "1200",
-				registration_link: "https://forms.gle/Yy1VNHxSZGUQhHbF6",
+				registration_link: "",
 			},
 			{
 				name: "Design",
@@ -129,18 +129,18 @@ export const eventList = {
 				registration_link: "",
 			},
 			{
-				name: "Studio",
+				name: "Planning Studio",
 				club: "Civicon",
 				description:
 					"A creative event where participants design and build innovative structures using various materials and techniques.",
 				start_time: "1000",
 				end_time: "1200",
-				registration_link: "",
+				registration_link: "https://forms.gle/Ce2FVD7FdobbGZiN7",
 			},
 		],
 	},
 	day2: {
-		date: "2024-03-19",
+		date: "2024-03-21",
 		events: [
 			{
 				name: "Sumo",
@@ -149,7 +149,7 @@ export const eventList = {
 					"Competitive robots battle head-to-head to push each other out of a ring.",
 				start_time: "1430",
 				end_time: "1750",
-				registration_link: "https://forms.gle/Yy1VNHxSZGUQhHbF6",
+				registration_link: "",
 			},
 			{
 				name: "Race",
@@ -158,7 +158,7 @@ export const eventList = {
 					"Thrilling competition where participants race their robots to the finish line.",
 				start_time: "1130",
 				end_time: "1430",
-				registration_link: "https://forms.gle/Yy1VNHxSZGUQhHbF6",
+				registration_link: "",
 			},
 			{
 				name: "Soccor",
@@ -167,7 +167,7 @@ export const eventList = {
 					"Robots showcase their football skills in a lively series of matches.",
 				start_time: "1000",
 				end_time: "1200",
-				registration_link: "https://forms.gle/Yy1VNHxSZGUQhHbF6",
+				registration_link: "",
 			},
 			{
 				name: "Tiny Hoop",
@@ -176,7 +176,7 @@ export const eventList = {
 					"Exciting challenge where robots showcase their agility by shooting hoops into small targets.",
 				start_time: "1000",
 				end_time: "1800",
-				registration_link: "https://forms.gle/Yy1VNHxSZGUQhHbF6",
+				registration_link: "",
 			},
 			{
 				name: "Sensor",
@@ -251,18 +251,18 @@ export const eventList = {
 				registration_link: "",
 			},
 			{
-				name: "Bridge",
+				name: "Bridgecraft",
 				club: "Civicon",
 				description:
-					"Structural engineering competition where participants design and build bridges capable of withstanding various loads.",
+					"Build the strongest bridge using popsicle sticks and glue, capable of withstanding the most weight 🦾",
 				start_time: "1400",
 				end_time: "1700",
-				registration_link: "",
+				registration_link: "https://forms.gle/psxiZtpSvHcaxfhw5",
 			},
 		],
 	},
 	day3: {
-		date: "2024-03-17",
+		date: "2024-03-22",
 		events: [
 			{
 				name: "Soccer",
@@ -271,7 +271,7 @@ export const eventList = {
 					"Lively event where robots showcase their football skills in a series of matches.",
 				start_time: "1000",
 				end_time: "1200",
-				registration_link: "https://forms.gle/Yy1VNHxSZGUQhHbF6",
+				registration_link: "",
 			},
 			// {
 			// 	name: "RC",
@@ -308,6 +308,15 @@ export const eventList = {
 				start_time: "1000",
 				end_time: "1700",
 				registration_link: "",
+			},
+			{
+				name: "Escape Room",
+				club: "Civicon",
+				description:
+					"Players solve the given series of mind bending riddles to get out of the room the fastest and  win exciting prizes.🎉✨",
+				start_time: "1000",
+				end_time: "1700",
+				registration_link: "https://forms.gle/kkKj8nvhFrWM9CYg8",
 			},
 		],
 	},

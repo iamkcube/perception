@@ -1,7 +1,7 @@
 import { useAuth } from "@/contexts/AuthContext";
 import { useOtherContext } from "@/contexts/OtherContext";
 import { clubList } from "@assets/ts/clubList";
-import { eventList } from "@assets/ts/eventList";
+import { eventList } from "@assets/ts/eventList1";
 import EventCard from "@eventspage/EventCard";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Avatar, Box, Fab, IconButton, Stack, Typography } from "@mui/material";
