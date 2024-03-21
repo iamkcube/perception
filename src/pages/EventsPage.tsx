@@ -228,9 +228,9 @@ export default function EventsPage() {
 }
 
 function getTitleFromKey(key: string) {
-	if (key == "day1") return "Monday, 18th March";
-	if (key == "day2") return "Tuesday, 19th March";
-	if (key == "day3") return "Wednesday, 20th March";
+	if (key == "day1") return "Wednesday, 20th March";
+	if (key == "day2") return "Thursday, 21st March";
+	if (key == "day3") return "Friday, 22th March";
 }
 
 interface Event {
