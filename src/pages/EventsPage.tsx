@@ -165,7 +165,7 @@ export default function EventsPage() {
 										fontFamily: "var(--monospace-font)",
 									}}
 								>
-									{getTitleFromKey(key)}
+									{getTitleFromKey(filteredObject[key].date)}
 								</Typography>
 							) : null}
 							<Box
@@ -190,7 +190,10 @@ export default function EventsPage() {
 										(a, b) => +a.start_time - +b.start_time
 									)
 									?.map((values, index) => {
-										console.log("🚀 ~ Object.keys ~ values:", values)
+										console.log(
+											"🚀 ~ Object.keys ~ values:",
+											values
+										);
 										return (
 											<EventCard
 												key={index}
@@ -228,9 +231,15 @@ export default function EventsPage() {
 }
 
 function getTitleFromKey(key: string) {
-	if (key == "day1") return "Wednesday, 20th March";
-	if (key == "day2") return "Thursday, 21st March";
-	if (key == "day3") return "Friday, 22th March";
+	const dateParts = key.split("-");
+	const formattedDate = new Date(
+		Date.UTC(+dateParts[0], +dateParts[1] - 1, +dateParts[2])
+	);
+	return new Intl.DateTimeFormat("en-US", {
+		weekday: "long",
+		day: "numeric",
+		month: "long",
+	}).format(formattedDate);
 }
 
 interface Event {
