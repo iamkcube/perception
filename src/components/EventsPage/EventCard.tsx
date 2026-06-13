@@ -1,6 +1,8 @@
 import { useOtherContext } from "@/contexts/OtherContext";
 import { SnackbarContext } from "@/contexts/SnackbarContext";
 import { timeFormatChanger } from "@assets/ts/timeFormatChanger";
+import PhoneIcon from "@mui/icons-material/Phone";
+import PhoneMissedIcon from "@mui/icons-material/PhoneMissed";
 import {
 	Box,
 	Card,
@@ -13,11 +15,9 @@ import {
 	Typography,
 	styled,
 } from "@mui/material";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import CustomButton from "@utils/CustomButton";
 import { useContext } from "react";
-import PhoneMissedIcon from "@mui/icons-material/PhoneMissed";
-import PhoneIcon from "@mui/icons-material/Phone";
 
 interface EventCardTypes {
 	name: string;
@@ -28,6 +28,8 @@ interface EventCardTypes {
 	registration_link?: string;
 	contact?: string[];
 }
+
+const UNSPLASH_ACCESS_KEY = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
 
 export default function EventCard({
 	name,
@@ -43,6 +45,27 @@ export default function EventCard({
 	// const queryClient = useQueryClient();
 	// const { userDoc } = useAuth();
 	const { openSnackbar } = useContext(SnackbarContext);
+	const { data: imageUrl } = useQuery({
+		queryKey: ["event-image", name],
+		queryFn: async () => {
+			const response = await fetch(
+				`https://api.unsplash.com/photos/random?query=${encodeURIComponent(
+					`${name} technology`
+				)}&client_id=${UNSPLASH_ACCESS_KEY}`
+			);
+
+			if (!response.ok) {
+				throw new Error("Failed to fetch image");
+			}
+
+			const data = await response.json();
+
+			return data.urls.regular as string;
+		},
+		staleTime: Infinity,
+		gcTime: Infinity,
+		retry: 1,
+	});
 
 	const {
 		mutate: mutateRegisterForEvent,
@@ -141,7 +164,10 @@ export default function EventCard({
 				>
 					<CardMedia
 						component="img"
-						src={`https://loremflickr.com/1080/720/${name.replaceAll(" ", "")},tech`}
+						src={
+							imageUrl ??
+							`https://picsum.photos/seed/${encodeURIComponent(name)}/1080/720`
+						}
 						alt="Event Image"
 						sx={{
 							width: "100%",
