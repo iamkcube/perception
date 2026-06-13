@@ -141,7 +141,7 @@ export default function EventCard({
 				>
 					<CardMedia
 						component="img"
-						src={`https://source.unsplash.com/1080x720?${name},tech`}
+						src={`https://loremflickr.com/1080/720/${name.replaceAll(" ", "")},tech`}
 						alt="Event Image"
 						sx={{
 							width: "100%",
